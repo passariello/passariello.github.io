@@ -28,6 +28,7 @@ CREATED BY DARIO PASSARIELLO (c)2020
 	float: left; 
 	padding: 20px;
 	min-height: 170px;
+	height:100%;
 	box-sizing: border-box;
 }
 
@@ -59,7 +60,10 @@ CREATED BY DARIO PASSARIELLO (c)2020
 }
 
 .footer {
+	position:absolute;
+	bottom:0;
 	background: #acb3b9;            
 	text-align: center;
 	padding: 5px;
+	height:80px;
 }
