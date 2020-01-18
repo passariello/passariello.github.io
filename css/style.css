@@ -7,6 +7,14 @@ CREATED BY DARIO PASSARIELLO (c)2020
 
 */
 
+.container {
+	width: 960px;
+	height:100%;
+	background: #f2f2f2;
+	margin:0 auto;
+	position:relative;
+}
+
 .header {
 	height:90px;
 	padding: 10px 20px;
@@ -17,25 +25,19 @@ CREATED BY DARIO PASSARIELLO (c)2020
 	font-size: 2em;
 }
 
-.container {
-	width: 960px;
-	height:100%;
-	background: #f2f2f2;
-	margin:0 auto;
-	position:relative;
+.header h2 {
+	font-size: 2em;
 }
 
-.nav, .section {
+.nav{
 	position:absolute;
-	left:0;
-	bottom:80px;
-	width:220px;
+	background:#777;
+	color:white;
+	height:30px;
 	top:90px;
-}
-
-.nav {            
-	width: 20%;             
-	background: #d4d7dc;
+	bottom:80px;
+	left:220px;
+	right:0;
 }
 
 .nav ul {
@@ -46,19 +48,34 @@ CREATED BY DARIO PASSARIELLO (c)2020
 
 .nav ul li a {
 	color: #333;
-}   
+} 
 
-.section {
-	width: 80%;
+.main {
+	position:absolute;
+	top:90px;
+	bottom:80px;
+	left:220px;
+	right:0;
 }
- 
-.clearfix:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
+
+.main-left {
+	background: #d4d7dc;
+	position:absolute;
+	left:0;
+	bottom:80px;
+	width:220px;
+	top:90px;
 }
+
+.main-left ul {
+	list-style: none; 
+	line-height: 24px;
+	padding: 0px; 
+}
+
+.main-left ul li a {
+	color: #333;
+}   
 
 .footer {
 	position:absolute;
