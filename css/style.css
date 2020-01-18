@@ -7,3 +7,56 @@ CREATED BY DARIO PASSARIELLO (c)2020
 
 */
 
+.header {
+	padding: 10px 20px;
+	background: #acb3b9; 
+}
+
+.header h1 {
+	font-size: 2em;
+}
+
+.container {
+	width: 100%;
+	background: #f2f2f2; 
+}
+
+.nav, .section {
+	float: left; 
+	padding: 20px;
+	min-height: 170px;
+	box-sizing: border-box;
+}
+
+.nav {            
+	width: 20%;             
+	background: #d4d7dc;
+}
+
+.nav ul {
+	list-style: none; 
+	line-height: 24px;
+	padding: 0px; 
+}
+
+.nav ul li a {
+	color: #333;
+}   
+
+.section {
+	width: 80%;
+}
+ 
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.footer {
+	background: #acb3b9;            
+	text-align: center;
+	padding: 5px;
+}
