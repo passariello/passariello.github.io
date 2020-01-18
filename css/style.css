@@ -17,8 +17,10 @@ CREATED BY DARIO PASSARIELLO (c)2020
 }
 
 .container {
-	width: 100%;
-	background: #f2f2f2; 
+	width: 960px;
+	height:100%;
+	background: #f2f2f2;
+	margin:0 auto;
 }
 
 .nav, .section {
