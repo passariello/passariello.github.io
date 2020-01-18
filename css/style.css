@@ -8,6 +8,7 @@ CREATED BY DARIO PASSARIELLO (c)2020
 */
 
 .header {
+	height:90px;
 	padding: 10px 20px;
 	background: #acb3b9; 
 }
@@ -20,16 +21,16 @@ CREATED BY DARIO PASSARIELLO (c)2020
 	width: 960px;
 	height:100%;
 	background: #f2f2f2;
-	margin:10px auto;
+	margin:0 auto;
 	position:relative;
 }
 
 .nav, .section {
-	float: left; 
-	padding: 20px;
-	min-height: 170px;
-	height:100%;
-	box-sizing: border-box;
+	position:absolute;
+	left:0;
+	bottom:80px;
+	width:220px;
+	top:90px;
 }
 
 .nav {            
@@ -62,6 +63,8 @@ CREATED BY DARIO PASSARIELLO (c)2020
 .footer {
 	position:absolute;
 	bottom:0;
+	left:0;
+	right:0;
 	background: #acb3b9;            
 	text-align: center;
 	padding: 5px;
