@@ -28,7 +28,7 @@ html, body{
 }
 
 body::after {
-	content: ".";
+	content: "";
 	background-image: linear-gradient(to bottom top, transparent, rgba(0,0,0,.6) );
 	background-position:center center;
 	background-repeat:no-repeat;
