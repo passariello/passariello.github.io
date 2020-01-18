@@ -1,0 +1,109 @@
+/*
+CREATED BY DARIO PASSARIELLO (c)2020
+
+
+
+
+
+*/
+
+:root {
+	--html-background-color: #EEE; 				/* BACKGROUND			*/
+	
+	--html-header-background-color: #222;		/* HEADER				*/
+	--html-header-font-color:#c8ccd5;			/* MAIN FONT COLOR		*/	
+	
+	--html-nav-background-color: #000;			/* NAV BACKGROUND		*/
+	
+	--html-main-background-color: #EEE;			/* MAIN BACKGROUND		*/
+	--html-main-font-color:#666666;				/* MAIN FONT COLOR		*/
+	
+	--html-aside-background-color: #3e4753;		/* ASIDE BACKGROUND		*/
+	
+	--html-sidebar-background-color: #FFF;		/* SIDEBAR BACKGROUND		*/
+	--html-sidebar-width: 55px;					/* SIDEBAR BACKGROUND		*/
+	
+	--html-footer-background-color: #AAA;		/* FOOTER BACKGROUND	*/
+	--html-footer-font-color:#c8ccd5;			/* FOOTER FONT COLOR	*/	
+	
+	--html-link-hover-color: #0093dd;			/* LINKS HOVER			*/		
+
+	--dimension: 100%;
+	--border-radius: 0;
+	--padding: 0;
+}
+
+html, body{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	position:relative;
+	overflow:hidden;
+	z-index:1;
+	outline: none;
+	outline-style: none;
+	vertical-align: top;
+	text-align: left;
+	text-overflow: ellipsis;
+	font-size:1em;
+	font-family: Helvetica, Arial, sans-serif;
+	color:#000;
+	border: solid black;
+	border-width:0 2px 2px 2px;
+}
+
+body::after {
+	content: "";
+	background-image: linear-gradient(to bottom right, transparent, rgba(0,0,0,.5) );
+	background-position:center center;
+	background-repeat:no-repeat;
+	position: fixed;
+	min-width:100%;
+	min-height:100%;
+	z-index: -1;   
+}
+
+h1,h2,h3,h4,h5,h6{
+	line-height:.5em;
+	height:.5em;
+	font-size:1em;
+	font-weight:50;
+}
+
+a{
+	text-decoration: none;
+}
+
+hr{
+	width:100%;
+	height:5px;
+	background-color:#888;
+	margin:5px 0;
+	border-top:1px solid #555;
+	border-bottom:1px solid #bbb;
+	border-radius:2px;
+	opacity:.3;
+}
+
+iframe{
+	/*
+	position:absolute;
+	top:30px;
+	left:0;
+	right:0;
+	bottom:0;
+	border:0;
+	width:100%;
+	height:calc(100% - 30px);
+	background-color:#aaa;
+	overflow:auto;
+	*/
+	display:none;
+}
+
+ul {
+  list-style-type: none;
+ }
+
+

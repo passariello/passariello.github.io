@@ -1,0 +1,92 @@
+/*
+CREATED BY DARIO PASSARIELLO (c)2020
+
+
+
+
+
+*/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: top;
+	outline:0 none !important;
+	outline-style:0 none !important;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]){
+	display: none;
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	vertical-align: middle;
+	border: 0;
+}
+
+ol, ul {
+	list-style: square;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
+	content: '';
+	content: none;
+}
+
+b, strong{
+	font-weight:900;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
