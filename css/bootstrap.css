@@ -28,8 +28,8 @@ SOFTWARE.
 	padding: 0;
 	border: 0;
 	vertical-align: top;
-	outline:0 !important;
-	outline-style:0 !important;
+	outline:0;
+	outline-style:0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 }

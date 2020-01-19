@@ -37,6 +37,7 @@ html, body{
 	font-size:1em;
 	font-family: Lato, Helvetica, Arial, sans-serif;
 	color:#444;
+	background-color: rgb(255,255,255);
 	cursor:default;
 }
 

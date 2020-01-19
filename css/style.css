@@ -127,8 +127,8 @@ SOFTWARE.
 
 .title h2{
 	position:absolute;
-	top:25px;
-	left:40px;	
+	top:20px;
+	left:20px;	
 	font-size:2em;
 	color:white;
 }
@@ -147,7 +147,7 @@ SOFTWARE.
 }
 
 .page article{
-	padding:20px 80px 80px 40px;
+	padding:0 80px 80px 40px;
 	font-size:1em;
 	line-height:1.4em;
 }
@@ -157,6 +157,11 @@ SOFTWARE.
 	height:2em;
 	line-height:3em;
 	font-size:1.7em;
+}
+
+.page h2:first-of-type,
+.page h3:first-of-type{
+	margin-top:-20px
 }
 
 .page p{

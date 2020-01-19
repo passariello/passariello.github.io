@@ -91,7 +91,7 @@ SOFTWARE.
 					
 					href = href.replace("#", "");
 					elem.addClass( href.replace(/\//g, '') );
-					elem.removeAttr( 'href' );
+					//elem.removeAttr( 'href' );
 				}
 			}).removeClass( 'selected' );
 			
@@ -110,7 +110,7 @@ SOFTWARE.
 			var result = hash.split('&').reduce(function (result, item) {
 				var parts = item.split('=');
 				result[ parts[0] ] = parts[1];
-				console.log( result );
+				//console.log( result );
 				return result;	
 			});
 			
