@@ -16,7 +16,7 @@ CREATED BY DARIO PASSARIELLO (c)2020
 .header {
 	height:90px;
 	padding: 10px 20px;
-	/*background: #acb3b9; */
+	background: #acb3b9;
 }
 
 .header h1 {
@@ -55,6 +55,7 @@ CREATED BY DARIO PASSARIELLO (c)2020
 	bottom:80px;
 	left:220px;
 	right:0;
+	padding:20px;
 }
 
 .main-left {
@@ -64,6 +65,7 @@ CREATED BY DARIO PASSARIELLO (c)2020
 	bottom:80px;
 	width:220px;
 	top:90px;
+	padding:20px;
 }
 
 .main-left ul {

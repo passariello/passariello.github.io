@@ -10,7 +10,7 @@ CREATED BY DARIO PASSARIELLO (c)2020
 html, body{
 	width:100%;
 	height:100%;
-	margin:5px;
+	margin:0;
 	padding:0;
 	position:relative;
 	overflow:hidden;
