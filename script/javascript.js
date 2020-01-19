@@ -124,7 +124,7 @@ SOFTWARE.
 						$( '.title h2' ).text( result );
 						$( 'nav .'+result ).addClass( 'selected' );
 						
-						document.title = result.charAt(0).toUpperCase() + result.slice(1);
+						document.title = "Dario Passariello - " + result.charAt(0).toUpperCase() + result.slice(1);
 
 					}).fail(function(){
 						error( 404 );	
