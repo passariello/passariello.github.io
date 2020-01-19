@@ -8,17 +8,16 @@ CREATED BY DARIO PASSARIELLO (c)2020
 */
 
 .container {
-	width: 960px;
+	width: 100%;
 	height:100%;
-	background: #f2f2f2;
-	margin:0 auto;
+	/*background: #f2f2f2;*/
 	position:relative;
 }
 
 .header {
 	height:90px;
 	padding: 10px 20px;
-	background: #acb3b9; 
+	/*background: #acb3b9; */
 }
 
 .header h1 {
@@ -52,7 +51,7 @@ CREATED BY DARIO PASSARIELLO (c)2020
 
 .main {
 	position:absolute;
-	top:90px;
+	top:110px;
 	bottom:80px;
 	left:220px;
 	right:0;
