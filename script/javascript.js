@@ -89,7 +89,7 @@ SOFTWARE.
 						window.location.hash = href;					
 					});
 					
-					href = href.replace("#", "");
+					href = href.replace("/#", "");
 					elem.addClass( href.replace(/\//g, '') );
 					//elem.removeAttr( 'href' );
 				}
