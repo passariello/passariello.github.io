@@ -128,13 +128,13 @@ SOFTWARE.
 	position:absolute;
 	top:25px;
 	left:40px;	
-	font-size:3em;
+	font-size:2em;
 	color:white;
 }
 
 /*****************************************************************************/
 
-.main {
+.page {
 	position:absolute;
 	top:150px;
 	bottom:80px;
@@ -142,22 +142,23 @@ SOFTWARE.
 	right:0;
 	line-height:1.5em;
 	overflow:auto;
+	display:none;
 }
 
-.main article{
+.page article{
 	padding:20px 80px 80px 40px;
 	font-size:1em;
 	line-height:1.4em;
 }
 
-.main h2,
-.main h3{
+.page h2,
+.page h3{
 	height:2em;
 	line-height:3em;
 	font-size:1.7em;
 }
 
-.main p{
+.page p{
 	padding-left:30px;
 	color:rgba(0,0,0,.6)
 }

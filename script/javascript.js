@@ -109,18 +109,19 @@ SOFTWARE.
 			
 			var result = hash.split('&').reduce(function (result, item) {
 				var parts = item.split('=');
-				result[parts[0]] = parts[1];
+				result[ parts[0] ] = parts[1];
+				console.log( result );
 				return result;	
 			});
 			
 			if( !result ) result = 'home';
 					
-				$('.main').fadeOut( 200 , function(){
+				$('.page').fadeOut( 200 , function(){
 					$.ajax({
 						url: noCache( "/pages/" + result +"/start.html" ),
 					}).done(function( data ) {
 
-						$( '.main' ).html( data ).fadeIn( 200 );
+						$( '.page' ).html( data ).fadeIn( 200 );
 						$( '.title h2' ).text( result );
 						$( 'nav .'+result ).addClass( 'selected' );
 						
@@ -133,7 +134,7 @@ SOFTWARE.
 
 			function error( id ){
 				switch ( id ) {
-					case 404: console.log( 'Page not found on server' );	break;
+					case 404: console.log( 'Page not found on server' ); break;
 					default: null;
 				}
 			};
