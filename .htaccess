@@ -253,13 +253,10 @@ FileETag None
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 
-	RewriteRule ^index(.*)$ /index.php [L]
-	RewriteRule ^default(.*)$ /index.php [L]
+	RewriteRule ^index(.*)$ /index.html [L]
+	RewriteRule ^default(.*)$ /index.html [L]
 
-	RewriteRule ^style(.*).css(.*)$ /config/css.php [L]
-	RewriteRule ^javascript(.*).js(.*)$ /config/javascript.php [L]
-
-	RewriteRule ^(.*)/$ /index.php?cid=$1 [L]
+	RewriteRule ^(.*)/$ /index.html [L]
 
 	RewriteCond %{REQUEST_URI} !(/$|\.)
 	RewriteRule (.*) %{REQUEST_URI}/ [R=301,L]

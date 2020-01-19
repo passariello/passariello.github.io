@@ -1,10 +1,25 @@
 /*
-CREATED BY DARIO PASSARIELLO (c)2020
+CREATED BY DARIO PASSARIELLO 
+copyright (c) 2020
 
 
-
-
-
+The MIT License (MIT)
+Copyright (c) 2020 Dario Passariello
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 */
 
 html, body{
@@ -13,7 +28,6 @@ html, body{
 	margin:0;
 	padding:0;
 	position:relative;
-	overflow:hidden;
 	z-index:1;
 	outline: none;
 	outline-style: none;
@@ -21,15 +35,15 @@ html, body{
 	text-align: left;
 	text-overflow: ellipsis;
 	font-size:1em;
-	font-family: Helvetica, Arial, sans-serif;
-	color:#000;
-	border: solid black;
-	border-width:0 2px 2px 2px;
+	font-family: Lato, Helvetica, Arial, sans-serif;
+	color:#444;
 }
 
 body::after {
-	content: "";
-	background-image: linear-gradient(to bottom right, transparent, rgba(0,0,0,.6) );
+	content: '';
+	background-image: 
+	linear-gradient(to bottom, transparent, rgba(0,0,0,.6) ), 
+	linear-gradient(45deg, #999 0%, #999 22%, #eee 22%, #eee 29%, transparent 29%);
 	background-position:center center;
 	background-repeat:no-repeat;
 	position: fixed;
@@ -38,6 +52,10 @@ body::after {
 	min-width:100%;
 	min-height:100%;
 	z-index: -1;   
+}
+
+body{
+	padding:10px 20px 20px 20px;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -52,10 +70,11 @@ a{
 }
 
 hr{
+	display:block;
 	width:100%;
-	height:5px;
+	height:4px;
 	background-color:#888;
-	margin:5px 0;
+	margin:8px 0;
 	border-top:1px solid #555;
 	border-bottom:1px solid #bbb;
 	border-radius:2px;
@@ -68,6 +87,28 @@ iframe{
 
 ul {
   list-style-type: none;
+}
+
+
+*::-webkit-scrollbar {
+	width:4px;
+	height:4px;
+	scroll-behavior: smooth;
+}
+ 
+*::-webkit-scrollbar-thumb {
+	background: #444;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+	margin:3px 3px;
+}
+
+*{
+	scrollbar-width: thin;
+	scrollbar-color: #444 transparent;
+	scroll-behavior: smooth;
 }
 
 

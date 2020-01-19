@@ -3,16 +3,21 @@
 
 	<head>
 		<title>Dario Passariello</title>
-		<base href="https://passariello.github.io/">
 		<meta charset="utf-8">
 		<meta name="author" content="Dario Passariello">
 		<meta name="keywords" content="Developer / Graphic Designer / Trainer">
 		<meta name="description" content="This is what I am, nothing else... Dario"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<link rel="stylesheet" href="/css/bootstrap.css">
 		<link rel="stylesheet" href="/css/html.css">
-		<link rel="stylesheet" href="/css/style.css?3">
+		<link rel="stylesheet" href="/css/style.css">
+		<link href="//fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+		
+		<style>
+		body{ display:none }
+		</style>
+
 	</head>
 
 	<body>
@@ -22,35 +27,63 @@
 			<header class="header">
 			
 				<h1>Dario Passariello</h1>
-				<h2>test text A</h2>
+				<h2>Developer / Graphic Designer / Trainer</h2>
+				<img src="https://s.gravatar.com/avatar/01a45ddbdc5d19503265cebdbc9b5c2f?s=180" alt="Dario Passariello website" width="180" height="180"  />
 				
-				<nav class="nav">nav</nav>
+				<nav class="nav">
+				<span></span>
+					<ul>
+						<li><a href="#home">home</a></li>
+						<li><a href="#about">about</a></li>
+						<li><a href="#contact">contact</a></li>
+					</ul>
+				</nav>
 				
 			</header>
 			
-			<main class="wrapper clearfix">
+			<main>
 			
-				<div class="main-left">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
+				<div class="main-left">					
+				<h2>About me:</h2>
+					<hr/>
+					Experienced award winning Graphic Designer specializing in 3D modeling and skills in computer AI, UI ,UX and automation. 
+					<br/>
+					Strong knoledge about server administration.
+					<br/>
+					<br/>
+					Excellent know-how of multimedia, productions and developer using computer language such as Php, Javascript and SQL.
 				</div>
 				
-				<div class="main">
-					<h2>Welcome to Dario Passariello Website</h2>
-					<p>Hello world...</p>
-				</div>
+				<div class="main"></div>
 				
 			</main>
 			
 			<footer class="footer">
-				<p>copyright &copy; 2020 Dario Passariello </p>
+				<p>Copyright &copy; 2020 </p>
+				<p>Design and Coding by Dario Passariello </p>
 			</footer>
 			
 		</div>
+
+	<script type="text/javascript">
+
+		function js( name ){
+		
+			var d = new Date();
+			var seconds = Math.round(d.getTime() / 1000);
+			var script = document.createElement('script');
+			
+			script.setAttribute("type", "text/javascript");
+			script.setAttribute("src", name + '?t=' + seconds );
+			document.getElementsByTagName("head")[0].appendChild(script);
+			console.log(name);
+		};
+		
+		js('//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+		js('/script/javascript.js');
+		
+	</script>
 		  
-	<script src="/script/javascript.js">
+	
 	</body>
 </html>                              

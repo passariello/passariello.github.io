@@ -1,62 +1,188 @@
 /*
-CREATED BY DARIO PASSARIELLO (c)2020
+CREATED BY DARIO PASSARIELLO 
+copyright (c) 2020
 
-
-
-
-
+The MIT License (MIT)
+Copyright (c) 2020 Dario Passariello
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 */
 
 .container {
-	width: 960px;
+	max-width: 960px;
+	min-width:480px;
 	height:100%;
+	min-height:480px;
 	position:relative;
 	margin:0 auto;
+	overflow:hidden;
+	border:5px solid transparent;
+	box-shadow:0 0 250px rgba(0,0,0,.4), 0 20px 30px rgba(0,0,0,.2);
+	border-radius:20px 20px 20px 130px;
+	z-index:2
+}
+
+.container:before {
+	background:#f2f2f2;
+	content:'';
+	position:absolute;
+	width:100%;
+	height:100%;
 }
 
 .header {
 	height:90px;
 	padding: 10px 20px;
-	background: #acb3b9;
+	background: #fefefe;
+	position:relative;
+	font-size: .8em;
+	border:solid #00aaff;
+	border-width:0 0 6px 0;
 }
 
 .header h1 {
-	font-size: 2em;
+	font-size: 1.8em;
+	position:absolute;
+	top:30px;
+	left:188px;
+	font-weight:800
 }
 
-.header h2 {
-	font-size: 2em;
+.header h2{
+	font-size: 1.1em;
+	position:absolute;
+	top:53px;
+	left:190px;
+	color:#666
+}
+
+.header img {
+	position:absolute;
+	top:10px;
+	left:35px;
+	width:140px;
+	height:140px;
+	border-radius:50%;
+	z-index:1;
+	border:1px solid rgba(0,0,0,.3)
+}
+
+.header:before {
+	content:'';
+	position:absolute;
+	top:50px;
+	left:-25px;
+	width:70px;
+	height:70px;
+	border-radius:50%;
+	z-index:3;
+	border:1px solid rgba(0,0,0,.3);
+	opacity:.4
+}
+
+.header:after {
+	content:'';
+	position:absolute;
+	top:55px;
+	left:25px;
+	width:25px;
+	height:25px;
+	border-radius:50%;
+	z-index:3;
+	border:1px solid rgba(0,0,0,.3);
+	opacity:.4
 }
 
 .nav{
 	position:absolute;
 	background:#777;
 	color:white;
-	height:30px;
+	height:60px;
 	top:90px;
 	bottom:80px;
 	left:220px;
 	right:0;
+	padding:30px 0 0 20px;
+	font-size:3em;
+	line-height:0;
+	text-transform: capitalize;
 }
 
 .nav ul {
+	font-size:.5em;
 	list-style: none; 
 	line-height: 24px;
-	padding: 0px; 
+	position:absolute;
+	left:-215px;
+	width:200px;
+	top:80px;
+	z-index:1;
 }
 
 .nav ul li a {
-	color: #333;
+	padding:10px 15px;
+	color: white;
+	display:block;
+	background-color:#777;
+	border:solid #00aaff;
+	border-width:0 0 0 3px;	
+	margin:3px;
+	overflow:hidden;
+	border-radius:8px;
+	text-transform: capitalize;
+} 
+
+.nav ul li a:hover {
+	background-color:#F60;
+} 
+
+.nav ul li a.selected {
+	background-color:#F60;
+} 
+
+.selected {
+	background-color:#F60;
 } 
 
 .main {
-	background:#f2f2f2;
 	position:absolute;
-	top:120px;
+	top:150px;
 	bottom:80px;
 	left:220px;
 	right:0;
-	padding:20px;
+	line-height:1.5em;
+	overflow:auto;
+}
+
+.main article{
+	padding:20px 80px 80px 40px;
+	font-size:1em;
+	line-height:1.4em;
+}
+
+.main h2,
+.main h3{
+	height:2em;
+	line-height:3em;
+	font-size:1.7em;
+}
+
+.main p{
+	padding-left:30px;
+	color:rgba(0,0,0,.6)
 }
 
 .main-left {
@@ -66,18 +192,14 @@ CREATED BY DARIO PASSARIELLO (c)2020
 	bottom:80px;
 	width:220px;
 	top:90px;
-	padding:20px;
+	padding:250px 20px 20px 20px;
+	font-size:.9em;
+	border-right:1px solid #bbb;
 }
 
-.main-left ul {
-	list-style: none; 
-	line-height: 24px;
-	padding: 0px; 
+.main-left h2{
+	font-size:1.5em;
 }
-
-.main-left ul li a {
-	color: #333;
-}   
 
 .footer {
 	position:absolute;
@@ -85,7 +207,31 @@ CREATED BY DARIO PASSARIELLO (c)2020
 	left:0;
 	right:0;
 	background: #acb3b9;            
-	text-align: center;
-	padding: 5px;
+	padding: 30px 60px;
 	height:80px;
+	border:solid #888;
+	border-width:0 0 0 220px;
+	color:white;	
 }
+
+.footer p:first-child{
+	float:left;	
+}
+
+.footer p:last-child{
+	float:right;	
+}
+
+.flare{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	border:1px rgba(0,0,0,.1) solid;
+	background-color:rgba(255,255,255,.1);
+	/*box-shadow:0 0 30px rgba(255,255,255,.4), 0 0 30px rgba(255,255,255,.2) inset ;*/
+	position:absolute;
+	opacity:.8;
+	z-index:1;
+}
+
+
