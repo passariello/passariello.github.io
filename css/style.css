@@ -157,11 +157,7 @@ SOFTWARE.
 	height:2em;
 	line-height:3em;
 	font-size:1.7em;
-}
-
-.page h2:first-of-type,
-.page h3:first-of-type{
-	margin-top:-20px
+	margin-top:-10px
 }
 
 .page p{
