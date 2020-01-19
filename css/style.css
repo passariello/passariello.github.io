@@ -43,6 +43,8 @@ SOFTWARE.
 	height:100%;
 }
 
+/*****************************************************************************/
+
 .header {
 	height:90px;
 	padding: 10px 20px;
@@ -106,7 +108,9 @@ SOFTWARE.
 	opacity:.4
 }
 
-.nav{
+/*****************************************************************************/
+
+.title{
 	position:absolute;
 	background:#777;
 	color:white;
@@ -115,47 +119,20 @@ SOFTWARE.
 	bottom:80px;
 	left:220px;
 	right:0;
-	padding:30px 0 0 20px;
-	font-size:3em;
+	padding:0;
 	line-height:0;
 	text-transform: capitalize;
 }
 
-.nav ul {
-	font-size:.5em;
-	list-style: none; 
-	line-height: 24px;
+.title h2{
 	position:absolute;
-	left:-215px;
-	width:200px;
-	top:80px;
-	z-index:1;
+	top:25px;
+	left:40px;	
+	font-size:3em;
+	color:white;
 }
 
-.nav ul li a {
-	padding:10px 15px;
-	color: white;
-	display:block;
-	background-color:#777;
-	border:solid #00aaff;
-	border-width:0 0 0 3px;	
-	margin:3px;
-	overflow:hidden;
-	border-radius:8px;
-	text-transform: capitalize;
-} 
-
-.nav ul li a:hover {
-	background-color:#F60;
-} 
-
-.nav ul li a.selected {
-	background-color:#F60;
-} 
-
-.selected {
-	background-color:#F60;
-} 
+/*****************************************************************************/
 
 .main {
 	position:absolute;
@@ -185,21 +162,55 @@ SOFTWARE.
 	color:rgba(0,0,0,.6)
 }
 
-.main-left {
+/*****************************************************************************/
+
+.nav {
 	background: #d4d7dc;
 	position:absolute;
 	left:0;
 	bottom:80px;
 	width:220px;
 	top:90px;
-	padding:250px 20px 20px 20px;
+	padding:80px 20px 20px 20px;
 	font-size:.9em;
 	border-right:1px solid #bbb;
+	overflow:auto;
 }
 
-.main-left h2{
+.nav h2{
 	font-size:1.5em;
 }
+
+.nav ul {
+	font-size:1.1em;
+	list-style: none; 
+	line-height: 24px;
+	margin-bottom:20px;
+	z-index:1;
+}
+
+.nav ul li a {
+	padding:10px 15px;
+	color: white;
+	display:block;
+	background-color:#777;
+	border:solid #00aaff;
+	border-width:0 0 0 3px;	
+	margin:3px;
+	overflow:hidden;
+	border-radius:8px;
+	text-transform: capitalize;
+} 
+
+.nav ul li a:hover {
+	background-color:#F60;
+} 
+
+.nav ul li a.selected {
+	background-color:#F60;
+} 
+
+/*****************************************************************************/
 
 .footer {
 	position:absolute;
@@ -209,7 +220,7 @@ SOFTWARE.
 	background: #acb3b9;            
 	padding: 30px 60px;
 	height:80px;
-	border:solid #888;
+	border:solid #777;
 	border-width:0 0 0 220px;
 	color:white;	
 }
@@ -222,13 +233,19 @@ SOFTWARE.
 	float:right;	
 }
 
+/*****************************************************************************/
+
 .flare{
 	width:100px;
 	height:100px;
 	border-radius:50%;
 	border:1px rgba(0,0,0,.1) solid;
 	background-color:rgba(255,255,255,.1);
-	/*box-shadow:0 0 30px rgba(255,255,255,.4), 0 0 30px rgba(255,255,255,.2) inset ;*/
+	/*
+	box-shadow:
+	0 0 30px rgba(255,255,255,.4), 
+	0 0 30px rgba(255,255,255,.2) inset;
+	*/
 	position:absolute;
 	opacity:.8;
 	z-index:1;

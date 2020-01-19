@@ -8,14 +8,23 @@
 		<meta name="keywords" content="Developer / Graphic Designer / Trainer">
 		<meta name="description" content="This is what I am, nothing else... Dario"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+		
+		<link href="//fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+		<link rel="manifest" href="/images/icons/site.webmanifest">
+		<link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+		
 		<link rel="stylesheet" href="/css/bootstrap.css">
 		<link rel="stylesheet" href="/css/html.css">
 		<link rel="stylesheet" href="/css/style.css">
-		<link href="//fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
 		
 		<style>
-		body{ display:none }
+			body{ display:none }
 		</style>
 
 	</head>
@@ -28,26 +37,28 @@
 			
 				<h1>Dario Passariello</h1>
 				<h2>Developer / Graphic Designer / Trainer</h2>
-				<img src="https://s.gravatar.com/avatar/01a45ddbdc5d19503265cebdbc9b5c2f?s=180" alt="Dario Passariello website" width="180" height="180"  />
+				<img src="//s.gravatar.com/avatar/01a45ddbdc5d19503265cebdbc9b5c2f?s=180" alt="Dario Passariello website" width="180" height="180"  />
 				
-				<nav class="nav">
-				<span></span>
-					<ul>
-						<li><a href="#home">home</a></li>
-						<li><a href="#about">about</a></li>
-						<li><a href="#contact">contact</a></li>
-					</ul>
-				</nav>
+				<div class="title">
+					<h2></h2>
+				</div>
 				
 			</header>
 			
 			<main>
 			
-				<div class="main-left">					
-				<h2>About me:</h2>
+				<nav class="nav">					
+					<nav>
+						<ul>
+							<li><a href="#home">home</a></li>
+							<li><a href="#about">about</a></li>
+							<li><a href="#contact">contact</a></li>
+						</ul>
+					</nav>
+					<h2>About me:</h2>
 					<hr/>
 					I love everything is related with computers, technologies and science. Also I love the real live, my family, food, travel, draw and music. 
-				</div>
+				</nav>
 				
 				<div class="main"></div>
 				
@@ -60,25 +71,7 @@
 			
 		</div>
 
-	<script type="text/javascript">
-
-		function js( name ){
-		
-			var d = new Date();
-			var seconds = Math.round(d.getTime() / 1000);
-			var script = document.createElement('script');
-			
-			script.setAttribute("type", "text/javascript");
-			script.setAttribute("src", name + '?t=' + seconds );
-			document.getElementsByTagName("head")[0].appendChild(script);
-			console.log(name);
-		};
-		
-		js('//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
-		js('/script/javascript.js');
-		
-	</script>
-		  
+	<script type="text/javascript" src="/script/javascript.js"></script>		  
 	
 	</body>
 </html>                              
