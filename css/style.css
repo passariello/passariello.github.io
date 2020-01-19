@@ -32,7 +32,8 @@ SOFTWARE.
 	border:5px solid transparent;
 	box-shadow:0 0 250px rgba(0,0,0,.4), 0 20px 30px rgba(0,0,0,.2);
 	border-radius:20px;
-	z-index:2
+	z-index:2;
+	display:none
 }
 
 .container:before {

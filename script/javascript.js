@@ -47,7 +47,7 @@ SOFTWARE.
 		
 		// SHOW PAGE
 		//**********************************	
-		$( 'body' ).fadeIn( 500 );
+		$( '.container' ).fadeIn( 500 );
 		
 		// GLOBAL SETUP
 		//**********************************
