@@ -24,6 +24,7 @@ SOFTWARE.
 	
 /******************************************************************************/
 
+document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
 
 	function js( name ){	
 		var d = new Date();
@@ -33,6 +34,22 @@ SOFTWARE.
 		script.setAttribute("type", "text/javascript");
 		script.setAttribute("src", name + '?t=' + seconds );
 		document.getElementsByTagName("head")[0].appendChild(script);
+	};
+
+/******************************************************************************/
+
+	function css( src , media , id ){
+		
+		if(id) stylesheet.id = id;
+		if(media) stylesheet.media = media;
+		var stylesheet = document.createElement('link');
+		
+		stylesheet.href = src.concat(/\?/.test(src)?'&':'?','t=',(new Date).getTime(),'.',Math.random()*123456789);
+		stylesheet.rel = 'stylesheet';
+		stylesheet.type = 'text/css';
+		
+		document.getElementsByTagName('head')[0].appendChild(stylesheet);
+		
 	};
 	
 /******************************************************************************/
@@ -127,8 +144,10 @@ SOFTWARE.
 						$( '.title h2' ).text( result );
 						$( 'nav .'+result ).addClass( 'selected' );
 						
+						css( "/pages/" + result +"/style.css",'','' );
+						
 						document.title = "Dario Passariello | page: " + result.charAt(0).toUpperCase() + result.slice(1);
-
+						
 					}).fail(function(){
 						error( result, 404 );	
 					});

@@ -166,12 +166,26 @@ SOFTWARE.
 	z-index:1
 }
 
-.page h2,
-.page h3{
-	height:2em;
-	line-height:3em;
+.page a.pdf{
+	background:#00aaff;
+	color:white;
+	border-radius:8px;
+	padding:10px 60px;
+	margin:10px 0;
+	display:block;
+	float:left;
+	clear:right;
+	border-bottom:3px groove rgba(0,0,0,.5);
+	text-shadow:0 -1px 0 rgba(0,0,0,.8);
+}
+
+.page article h2,
+.page article h3{
+	height:auto;
+	line-height:1em;
 	font-size:1.7em;
-	margin-top:-10px
+	margin:15px 0;
+	display:block;
 }
 
 .page p{
