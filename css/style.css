@@ -281,10 +281,12 @@ SOFTWARE.
 	width:15px;
 	height:15px;
 	bottom:72.5px;
-	left:-7.5px;
-	background:#00aaff;
+	left:-8px;
+	background:#aaa;
 	transform:rotate(45deg);
 	z-index:5;
+	border:1px #444 solid;
+	border-radius:50%
 }
 
 .footer img{
