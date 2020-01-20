@@ -138,6 +138,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 				var href = elem.attr('href');
 			
 				if( elem.attr('href') != undefined){
+					
 					elem.unbind().click( function(){ 
 						//window.location.hash = "/" + href;
 						//console.log( href );					
