@@ -91,7 +91,7 @@ SOFTWARE.
 					
 					href = href.replace("/#", "");
 					elem.addClass( href.replace(/\//g, '') );
-					//elem.removeAttr( 'href' );
+					elem.removeAttr( 'href' );
 				}
 			}).removeClass( 'selected' );
 			
@@ -102,6 +102,8 @@ SOFTWARE.
 		// ALL ANCHOR TO ONCLICK
 		//**********************************		
 		let UrlByOnClick = function(){	
+
+			$('<div class="loader"><i></i></div>').appendTo('.page');
 
 			var d = new Date();
 			var seconds = Math.round(d.getTime() / 1000);
@@ -115,12 +117,12 @@ SOFTWARE.
 			});
 			
 			if( !result ) result = 'home';
-					
+				
 				$('.page').fadeOut( 200 , function(){
 					$.ajax({
 						url: noCache( "/pages/" + result +"/start.html" ),
 					}).done(function( data ) {
-
+						
 						$( '.page' ).html( data ).fadeIn( 200 );
 						$( '.title h2' ).text( result );
 						$( 'nav .'+result ).addClass( 'selected' );

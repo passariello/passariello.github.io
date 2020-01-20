@@ -79,7 +79,7 @@ SOFTWARE.
 	width:140px;
 	height:140px;
 	border-radius:50%;
-	z-index:1;
+	z-index:5;
 	border:1px solid rgba(0,0,0,.3)
 }
 
@@ -123,6 +123,9 @@ SOFTWARE.
 	padding:0;
 	line-height:0;
 	text-transform: capitalize;
+	border-bottom:2px solid white;
+	box-shadow:0 8px 30px rgba(0,0,0,.2), 0 4px 10px rgba(0,0,0,.2);
+	z-index:3;
 }
 
 .title h2{
@@ -144,12 +147,20 @@ SOFTWARE.
 	line-height:1.5em;
 	overflow:auto;
 	display:none;
+	box-shadow:0 0 50px rgba(0,0,0,.2) inset
 }
 
 .page article{
-	padding:0 80px 80px 40px;
+	padding:20px 40px;
 	font-size:1em;
 	line-height:1.4em;
+}
+
+.page img{
+	border:solid white;
+	border-width:10px;
+	box-shadow:0 5px 20px rgba(0,0,0,.2);
+	z-index:1
 }
 
 .page h2,
@@ -168,16 +179,20 @@ SOFTWARE.
 /*****************************************************************************/
 
 .nav {
-	background: #d4d7dc;
 	position:absolute;
 	left:0;
 	bottom:80px;
 	width:220px;
 	top:90px;
-	padding:80px 20px 20px 20px;
+	padding:80px 10px 20px 5px;
 	font-size:.9em;
 	border-right:1px solid #bbb;
 	overflow:auto;
+	z-index:4;
+	background-color: #d4d7dc;
+	background-image:	
+	linear-gradient(0, rgba(0,0,0,.3) 0%, transparent 50%),
+	linear-gradient(45deg, #999 19%, #999 19%, white 19%, white 24%, transparent 24%);
 }
 
 .nav h2{
@@ -188,7 +203,6 @@ SOFTWARE.
 	font-size:1.1em;
 	list-style: none; 
 	line-height: 24px;
-	margin-bottom:20px;
 	z-index:1;
 }
 
@@ -213,6 +227,14 @@ SOFTWARE.
 	background-color:#F60;
 } 
 
+.nav i {
+	margin:5px 10px 0 0;
+} 
+
+.nav div {
+	padding:20px;
+} 
+
 /*****************************************************************************/
 
 .footer {
@@ -228,12 +250,30 @@ SOFTWARE.
 	color:white;	
 }
 
-.footer p:first-child{
+.footer p:nth-child(1){
 	float:left;	
 }
 
-.footer p:last-child{
+.footer p:nth-child(2){
 	float:right;	
+}
+
+.footer span{
+	position:absolute;
+	display:block;
+	width:15px;
+	height:15px;
+	bottom:72.5px;
+	left:-7.5px;
+	background:#00aaff;
+	transform:rotate(45deg);
+	z-index:5;
+}
+
+.footer img{
+	position:absolute;
+	bottom:20px;
+	left:-180px;
 }
 
 /*****************************************************************************/
@@ -252,6 +292,80 @@ SOFTWARE.
 	position:absolute;
 	opacity:.8;
 	z-index:1;
+}
+
+/*****************************************************************************/
+
+.loader{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;	
+	/*display:none;*/
+	z-index:100;
+	/*background:rgba(255,255,255,.5);*/
+}
+
+.loader i{
+	position:absolute;
+	width:180px;
+	height:180px;
+	border:4px solid #bbb;
+	border-top-color:#F60;
+	border-radius:50%;
+	left: calc( 50% - 90px );
+	top: calc( 50% - 90px );
+	
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: spin;
+    -moz-animation-duration: .5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -ms-animation-name: spin;
+    -ms-animation-duration: .5s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+	
+@-ms-keyframes spin { 
+        from { 
+            -ms-transform: rotate(0deg); 
+        } to { 
+            -ms-transform: rotate(360deg); 
+        }
+    }
+    @-moz-keyframes spin { 
+        from { 
+            -moz-transform: rotate(0deg); 
+        } to { 
+            -moz-transform: rotate(360deg); 
+        }
+    }
+    @-webkit-keyframes spin { 
+        from { 
+            -webkit-transform: rotate(0deg); 
+        } to { 
+            -webkit-transform: rotate(360deg); 
+        }
+    }
+    @keyframes spin { 
+        from { 
+            transform: rotate(0deg); 
+        } to { 
+            transform: rotate(360deg); 
+        }
+    }
 }
 
 
