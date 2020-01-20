@@ -132,7 +132,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 		// ALL ANCHOR TO ONCLICK
 		//**********************************	
 		let AllAnchorToOnClick = function(){
-			
+		
 			$('nav ul li a').each( function(index) {
 				var elem = $(this);
 				var href = elem.attr('href');
@@ -145,6 +145,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 					href = href.replace("/#/" , "");
 					elem.addClass( href.replace(/\//g, '') );
 					elem.removeAttr( 'href' );
+					console.log( href );						
 				}
 			}).removeClass( 'selected' );
 			
@@ -170,6 +171,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 			});
 			
 			if( !result ) result = 'home';
+			result = result.replace("/" , "");
 				
 				$('.page').fadeOut( 200 , function(){
 					$.ajax({
