@@ -134,19 +134,19 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 		let AllAnchorToOnClick = function(){
 		
 			$('nav ul li a').each( function(index) {
-				var elem = $(this);
-				var href = elem.attr('href');
+				var elem = $( this );
+				var href = elem.attr( 'href' );
 			
-				if( elem.attr('href') != undefined){
+				if( elem.attr( 'href' ) != undefined){
 					
 					elem.unbind().click( function(){ 
-						//window.location.hash = "/" + href;
-						//console.log( href );					
+						window.location.hash = "/" + href;
+						console.log( href );					
 					});
 					
 					href = href.replace("/#/" , "");
 					elem.addClass( href.replace(/\//g, '') );
-					//elem.removeAttr( 'href' );
+					elem.removeAttr( 'href' );
 						
 				}
 			}).removeClass( 'selected' );
