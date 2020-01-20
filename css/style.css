@@ -147,7 +147,10 @@ SOFTWARE.
 	line-height:1.5em;
 	overflow:auto;
 	display:none;
-	box-shadow:0 0 50px rgba(0,0,0,.2) inset
+	box-shadow:0 0 50px rgba(0,0,0,.2) inset;
+	background-image:	
+	/*linear-gradient(45deg, rgba(0,0,0,.1) 6%, rgba(0,0,0,.1) 6%, rgba(0,0,0,.03) 6%, rgba(0,0,0,.03) 10%, transparent 10%);*/
+	linear-gradient(45deg, transparent 0%, transparent 92%, rgba(0,0,0,.1) 92%, rgba(0,0,0,.1) 90%);
 }
 
 .page article{
@@ -156,7 +159,7 @@ SOFTWARE.
 	line-height:1.4em;
 }
 
-.page img{
+.page article img{
 	border:solid white;
 	border-width:10px;
 	box-shadow:0 5px 20px rgba(0,0,0,.2);
@@ -192,7 +195,7 @@ SOFTWARE.
 	background-color: #d4d7dc;
 	background-image:	
 	linear-gradient(0, rgba(0,0,0,.3) 0%, transparent 50%),
-	linear-gradient(45deg, #999 19%, #999 19%, white 19%, white 24%, transparent 24%);
+	linear-gradient(45deg, rgba(0,0,0,.3) 19%, rgba(0,0,0,.3) 19%, rgba(0,0,0,.05) 19%, rgba(0,0,0,.05) 29%, transparent 29%);
 }
 
 .nav h2{
@@ -242,10 +245,10 @@ SOFTWARE.
 	bottom:0;
 	left:0;
 	right:0;
-	background: #acb3b9;            
+	background: rgba(0,0,0,.4);            
 	padding: 30px 60px;
 	height:80px;
-	border:solid #777;
+	border:solid rgba(0,0,0,.5);
 	border-width:0 0 0 220px;
 	color:white;	
 }

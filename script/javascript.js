@@ -127,18 +127,25 @@ SOFTWARE.
 						$( '.title h2' ).text( result );
 						$( 'nav .'+result ).addClass( 'selected' );
 						
-						document.title = "Dario Passariello - " + result.charAt(0).toUpperCase() + result.slice(1);
+						document.title = "Dario Passariello | page: " + result.charAt(0).toUpperCase() + result.slice(1);
 
 					}).fail(function(){
-						error( 404 );	
+						error( result, 404 );	
 					});
 				});
 
-			function error( id ){
-				switch ( id ) {
-					case 404: console.log( 'Page not found on server' ); break;
+			function error( page, error ){
+				var $page;
+				switch ( error ) {	case 404: $page = 404; break;
 					default: null;
 				}
+				
+				console.log( 'Page ' + page + ' not found on server' ); 
+				document.title = "Dario Passariello - Error " + error + ", page " + page + " not found on server";
+				$( '.title h2' ).text( error );
+					$.ajax({ url: noCache( "/pages/errors/" + $page + ".html" )}).done(function( data ) {
+						$( '.page' ).html( data ).fadeIn( 200 );
+					});
 			};
 		};
 		
