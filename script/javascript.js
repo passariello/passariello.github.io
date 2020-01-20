@@ -142,7 +142,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 						window.location.hash = href;					
 					});
 					
-					href = href.replace("/#/", "");
+					href = href.replace("/#/" , "");
 					elem.addClass( href.replace(/\//g, '') );
 					elem.removeAttr( 'href' );
 				}
