@@ -139,13 +139,14 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 			
 				if( elem.attr('href') != undefined){
 					elem.unbind().click( function(){ 
-						window.location.hash = href;					
+						window.location.hash = href;
+						console.log( href );					
 					});
 					
 					href = href.replace("/#/" , "");
 					elem.addClass( href.replace(/\//g, '') );
 					elem.removeAttr( 'href' );
-					console.log( href );						
+						
 				}
 			}).removeClass( 'selected' );
 			
