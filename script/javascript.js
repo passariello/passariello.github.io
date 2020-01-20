@@ -85,7 +85,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 
 	// ANALITICS
 	let sendToAnalytics = function( path ){
-		gtag('send', { hitType: 'pageview', page: path });
+		ga('send', { hitType: 'pageview', page: path });
 	};
 
 /******************************************************************************/
