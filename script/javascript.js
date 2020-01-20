@@ -85,7 +85,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 
 	// ANALITICS
 	let sendToAnalytics = function( path ){
-		ga('send', {hitType: 'pageview', page: path});
+		ga('send', { hitType: 'pageview', page: path });
 	};
 
 /******************************************************************************/
@@ -223,11 +223,9 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 	js('//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
 
 	try{
-		top.Exec();
+		Exec();
 	}catch(e){
-		window.addEventListener("load", function(){
-			top.Exec();
-			} ,false);
+		window.addEventListener("load", function(){ Exec();	} ,false);
 	}
 
 
