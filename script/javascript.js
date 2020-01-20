@@ -83,7 +83,14 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 
 /******************************************************************************/
 
-	var Exec = function(){
+	// ANALITICS
+	let sendToAnalytics = function( path ){
+		ga('send', {hitType: 'pageview', page: path});
+	};
+
+/******************************************************************************/
+
+	let Exec = function(){
 		
 		// DECORATION
 		//**********************************
@@ -176,13 +183,14 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 						css( "/pages/" + result +"/style.css",'','' );
 						
 						document.title = "Dario Passariello | page: " + result.charAt(0).toUpperCase() + result.slice(1);
+						sendToAnalytics( "/pages/" + result +"/start.html" );
 						
 					}).fail(function(){
 						error( result, 404 );	
 					});
 				});
 
-			function error( page, error ){
+			let error function( page, error ){
 				var $page;
 				switch ( error ) {	case 404: $page = 404; break;
 					default: null;
