@@ -26,7 +26,7 @@ SOFTWARE.
 
 document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
 
-	function js( name ){	
+	let js = function( name ){	
 		var d = new Date();
 		var seconds = Math.round(d.getTime() / 1000);
 		var script = document.createElement('script');
@@ -38,7 +38,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 
 /******************************************************************************/
 
-	function css( src , media , id ){
+	let css = function( src , media , id ){
 		
 		if(id) stylesheet.id = id;
 		if(media) stylesheet.media = media;
@@ -52,6 +52,35 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 		
 	};
 	
+/******************************************************************************/
+
+	let DisableSelect = function(e){
+		
+		$( document ).each( function(i){
+
+			$(this)
+			.css("MozUserSelect","none")
+			.css("WebKitUserSelect","none");
+			
+			$(this).prop('unselectable','on');
+			$(this).focus();
+
+			$(this).on("select" ,function(){ return false; });
+			$(this).on("selectstart" , function(){ return false; });
+			
+			this.onselectstart = new Function( "return false" );
+			this.oncontextmenu = new Function( "return false" );
+			
+			$('img').on('dragstart', function(e) { e.preventDefault(); });
+			
+		});
+		
+		return 
+
+	};
+
+	this.addEventListener('mousedown',function(e){DisableSelect();}, false);
+
 /******************************************************************************/
 
 	var Exec = function(){
