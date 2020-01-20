@@ -90,7 +90,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 
 /******************************************************************************/
 
-	let Exec = function(){
+	var Exec = function(){
 		
 		// DECORATION
 		//**********************************
