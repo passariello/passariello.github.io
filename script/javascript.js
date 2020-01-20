@@ -190,7 +190,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 					});
 				});
 
-			let error function( page, error ){
+			let error = function( page, error ){
 				var $page;
 				switch ( error ) {	case 404: $page = 404; break;
 					default: null;
