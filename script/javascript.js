@@ -147,7 +147,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 					
 					href = href.replace("/#/" , "");
 					elem.addClass( href.replace(/\//g, '') );
-					elem.removeAttr( 'href' );
+					//elem.removeAttr( 'href' );
 						
 				}
 			}).removeClass( 'selected' );
