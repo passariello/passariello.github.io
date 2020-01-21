@@ -4,13 +4,12 @@
 	padding:0 0 50px 0;
 }
 
-.about div h3{
-	border-bottom:5px solid #ddd;
-	color:rgba(0,0,0,.5);
-}
-
 .about div:not(:first-child){
 	margin-top:40px;
+}
+
+.about div ul{
+	padding:0 20px;
 }
 
 .about div ul li{
@@ -24,6 +23,6 @@
 .about div ul li span{
 	font-weight:900;
 	font-size:1.1em;
-	color:rgba(0,0,0,.9);
+	color:rgba(0,0,0,.7);
 }
 

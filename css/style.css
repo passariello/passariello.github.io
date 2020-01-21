@@ -123,7 +123,7 @@ SOFTWARE.
 	padding:0;
 	line-height:0;
 	text-transform: capitalize;
-	border-bottom:2px solid white;
+	border-bottom:2px solid #666;
 	box-shadow:0 8px 30px rgba(0,0,0,.2), 0 4px 10px rgba(0,0,0,.2);
 	z-index:3;
 }
@@ -133,7 +133,8 @@ SOFTWARE.
 	top:20px;
 	left:20px;	
 	font-size:2em;
-	color:white;
+	color:#fff;
+	font-weight:900;
 }
 
 /*****************************************************************************/
@@ -179,14 +180,19 @@ SOFTWARE.
 	text-shadow:0 -1px 0 rgba(0,0,0,.8);
 }
 
-.page article h2,
-.page article h3{
+.page > article h2,
+.page > article h3{
 	height:auto;
 	line-height:1em;
-	font-size:1.7em;
+	font-size:3em;
 	margin:15px 0;
-	display:block;
+	display:block;	
+	font-weight:900;
+	letter-spacing:-.02em;
+	text-shadow: 0 -1px 1.05px #555, 0 2.01px 0 #fff;
+	color:#dfdfdf;
 }
+
 
 .page p{
 	padding-left:30px;
@@ -285,7 +291,7 @@ SOFTWARE.
 	background:#aaa;
 	transform:rotate(45deg);
 	z-index:5;
-	border:1px #444 solid;
+	border:1px rgba(0,0,0,.2) solid;
 	border-radius:50%
 }
 
