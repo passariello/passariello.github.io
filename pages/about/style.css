@@ -1,18 +1,18 @@
 
 
-.about{
-	padding:0 0 50px 0;
+article.about{
+	/*padding:0 0 50px 0;*/
 }
 
-.about div:not(:first-child){
+article.about div:not(:first-child){
 	margin-top:40px;
 }
 
-.about div ul{
+article.about div ul{
 	padding:0 20px;
 }
 
-.about div ul li{
+article.about div ul li{
 	padding:10px 0;
 	font-size:.9em;
 	color:rgba(0,0,0,.6);
@@ -20,7 +20,7 @@
 	display:table;
 }
 
-.about div ul li span{
+article.about div ul li span{
 	font-weight:900;
 	font-size:1.1em;
 	color:rgba(0,0,0,.7);

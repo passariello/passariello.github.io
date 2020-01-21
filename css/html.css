@@ -28,7 +28,6 @@ html, body{
 	margin:0;
 	padding:0;
 	position:relative;
-	z-index:1;
 	outline: none;
 	outline-style: none;
 	vertical-align: top;
@@ -39,6 +38,8 @@ html, body{
 	color:#000;
 	background-color: white;
 	cursor:default;
+	background-image:url( /images/dot.svg );
+	z-index:-2;
 }
 
 body::after {

@@ -74,13 +74,13 @@ SOFTWARE.
 
 .header img {
 	position:absolute;
-	top:10px;
+	top:14px;
 	left:35px;
 	width:140px;
 	height:140px;
 	border-radius:50%;
 	z-index:5;
-	border:1px solid rgba(0,0,0,.3)
+	border:2px solid #00aaff
 }
 
 .header:before {
@@ -180,8 +180,8 @@ SOFTWARE.
 	text-shadow:0 -1px 0 rgba(0,0,0,.8);
 }
 
-.page > article h2,
-.page > article h3{
+.page article h2,
+.page article h3{
 	height:auto;
 	line-height:1em;
 	font-size:3em;
@@ -195,7 +195,7 @@ SOFTWARE.
 
 
 .page p{
-	padding-left:30px;
+	padding:0 0 20px 30px;
 	color:rgba(0,0,0,.6)
 }
 
@@ -216,6 +216,7 @@ SOFTWARE.
 	background-image:	
 	linear-gradient(0, rgba(0,0,0,.3) 0%, transparent 50%),
 	linear-gradient(45deg, rgba(0,0,0,.3) 19%, rgba(0,0,0,.3) 19%, rgba(0,0,0,.05) 19%, rgba(0,0,0,.05) 29%, transparent 29%);
+	box-shadow:2px 0 20px rgba(0,0,0,.3);
 }
 
 .nav h2{

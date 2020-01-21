@@ -26,10 +26,10 @@ SOFTWARE.
 
 document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
 
-	let js = function( name ){	
+	let js = function( name ){
+		var script = document.createElement('script');	
 		var d = new Date();
 		var seconds = Math.round(d.getTime() / 1000);
-		var script = document.createElement('script');
 		
 		script.setAttribute("type", "text/javascript");
 		script.setAttribute("src", name + '?t=' + seconds );
@@ -43,8 +43,10 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 		if(id) stylesheet.id = id;
 		if(media) stylesheet.media = media;
 		var stylesheet = document.createElement('link');
+		var d = new Date();
+		var seconds = Math.round(d.getTime() / 1000);
 		
-		stylesheet.href = src.concat(/\?/.test(src)?'&':'?','t=',(new Date).getTime(),'.',Math.random()*123456789);
+		stylesheet.href = src + '?t=' + seconds;
 		stylesheet.rel = 'stylesheet';
 		stylesheet.type = 'text/css';
 		
@@ -140,8 +142,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 				if( elem.attr( 'href' ) != undefined){
 					
 					elem.unbind().click( function(){ 
-						window.location.hash = "/" + href;
-						console.log( href );					
+						window.location.hash = "/" + href;				
 					});
 					
 					href = href.replace("/#/" , "");
@@ -163,50 +164,62 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 
 			var d = new Date();
 			var seconds = Math.round(d.getTime() / 1000);
-			var hash = window.location.hash.substr(1);
+			var result = window.location.hash.substr(1);
+			console.log( result.replace(/\//g, '') );
 			
-			var result = hash.split('&').reduce(function (result, item) {
+			if (result.indexOf('?') > -1) window.location.hash = "/home";	
+			if (result.indexOf('#') > -1) window.location.hash = "/home";	
+			
+			/*
+			var result = hash.split('/').reduce(function (result, item) {
 				var parts = item.split('=');
 				result[ parts[0] ] = parts[1];
-				//console.log( result );
+				console.log( result );
 				return result;	
 			});
-			
-			if( !result ) result = 'home';
-			result = result.replace("/" , "");
-				
-				$('.page').fadeOut( 200 , function(){
-					$.ajax({
-						url: noCache( "/pages/" + result +"/start.html" ),
-					}).done(function( data ) {
-						
-						$( '.page' ).html( data ).fadeIn( 200 );
-						$( '.title h2' ).text( result );
-						$( 'nav .'+result ).addClass( 'selected' );
-						
-						css( "/pages/" + result +"/style.css",'','' );
-						
-						document.title = "Dario Passariello | page: " + result.charAt(0).toUpperCase() + result.slice(1);
-						sendToAnalytics( "/pages/" + result +"/start.html" );
-						
-					}).fail(function(){
-						error( result, 404 );	
-					});
-				});
+			*/
 
-			let error = function( page, error ){
-				var $page;
-				switch ( error ) {	case 404: $page = 404; break;
-					default: null;
-				}
-				
-				console.log( 'Page ' + page + ' not found on server' ); 
-				document.title = "Dario Passariello - Error " + error + ", page " + page + " not found on server";
-				$( '.title h2' ).text( error );
-					$.ajax({ url: noCache( "/pages/errors/" + $page + ".html" )}).done(function( data ) {
-						$( '.page' ).html( data ).fadeIn( 200 );
-					});
-			};
+			if( !result ) result = 'home';
+			
+			result = result.replace("/" , "");			
+			var parts = result.split('/');
+			css( "/pages/" + result +"/style.css",'','' );	
+			
+			$('.page').fadeOut( 200 , function(){
+				$.ajax({
+					url: noCache( "/pages/" + result +"/start.html" ),
+				}).done(function( data ) {
+					
+					$( '.page' ).html( data ).fadeIn( 200 );
+					$( '.title h2' ).text( parts[0] );
+					$( 'nav .' + parts[0] ).addClass( 'selected' );
+					
+					
+					
+					document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
+					sendToAnalytics( "/pages/" + result + "/start.html" );
+					
+				}).fail(function(){
+					error( result, 404 );	
+				});
+			});
+
+		};
+		
+		//**********************************
+		let error = function( page, error ){
+			var $page;
+			switch ( error ) {	case 404: $page = 404; break;
+				default: null;
+			}
+			
+			console.log( 'Page ' + page + ' not found on server' ); 
+			document.title = "Dario Passariello - Error " + error + ", page " + page + " not found on server";
+			$( '.title h2' ).text( error );
+			
+				$.ajax({ url: noCache( "/pages/errors/" + $page + ".html" )}).done(function( data ) {
+					$( '.page' ).html( data ).fadeIn( 200 );
+				});
 		};
 		
 		// CHANGE HASH
