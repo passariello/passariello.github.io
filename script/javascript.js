@@ -86,8 +86,9 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 /******************************************************************************/
 
 	// ANALITICS
-	let sendToAnalytics = function( path ){
-		ga('send', { hitType: 'pageview', page: path });
+	let SendToAnalytics = function(){
+        _paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
+        _paq.push(['trackPageView']);
 	};
 
 /******************************************************************************/
@@ -197,7 +198,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 					
 					
 					document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
-					sendToAnalytics( "/pages/" + result + "/start.html" );
+
 					
 				}).fail(function(){
 					error( result, 404 );	
@@ -227,6 +228,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 		$(window).bind( 'hashchange', function(e) {
 			AllAnchorToOnClick();
 			UrlByOnClick();
+			SendToAnalytics();
 		});
 		
 		// FIRST TRIGGER
