@@ -107,11 +107,26 @@ SOFTWARE.
 	// ANALITICS
 
 	let SendToAnalytics = function(){
-        //_paq.push( [ 'setCustomUrl' , '/' ] );
-        _paq.push( [ 'trackPageView' ] );
+        _paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
+        _paq.push( ['trackPageView'] );
 	};
 	
 
+/******************************************************************************/
+
+	let iframeSize = function(){
+		$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
+
+				if (window.matchMedia('(min-width: 750px)').matches) {		
+					$("iframe").css({"width": "100%","height":"400px"});
+					$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
+				} else {
+					$("iframe").css({"width": "100%","height":"350px"});
+					$(".about ul").css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
+				}
+				
+		};
+		
 /******************************************************************************/
 
 	var Exec = function(){
@@ -207,21 +222,28 @@ SOFTWARE.
 			var parts = result.split('/');
 			css( "/pages/" + result +"/style.css",'','' );	
 			
-			$('.page').fadeOut( 200 , function(){
-				$.ajax({
-					url: noCache( "/pages/" + result +"/start.html" ),
-				}).done(function( data ) {
+				$('.page').fadeOut( 200 , function(){
 					
-					$( '.page' ).html( data ).fadeIn( 500 );
-					$( '.title h2' ).text( parts[0] );
-					$( 'nav .' + parts[0] ).addClass( 'selected' );
+					$.ajax({
+						url: noCache( "/pages/" + result +"/start.html" ),
+					}).done(function( data ) {
+						
+						$( '.page' )
+						.html( data )
+						.fadeIn( 500 )
+						.scrollTop(0);
+						//.animate({'scrollTop':0},{'duration':1,easing:'swing'});						
+						
+						$( '.title h2' ).text( parts[0] );
+						$( 'nav .' + parts[0] ).addClass( 'selected' );
+						
+						document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
+						
+					}).fail(function(){
+						error( result, 404 );	
+					});
 					
-					document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
-					
-				}).fail(function(){
-					error( result, 404 );	
 				});
-			});
 			
 			SendToAnalytics();
 
