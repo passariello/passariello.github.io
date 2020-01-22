@@ -124,7 +124,7 @@ SOFTWARE.
 	line-height:0;
 	text-transform: capitalize;
 	border-bottom:2px solid #666;
-	box-shadow:0 8px 30px rgba(0,0,0,.2), 0 4px 10px rgba(0,0,0,.2);
+	box-shadow:0 12px 30px rgba(0,0,0,.2), 0 4px 10px rgba(0,0,0,.4);
 	z-index:3;
 }
 
@@ -191,6 +191,7 @@ SOFTWARE.
 	letter-spacing:-.02em;
 	text-shadow: 0 -1px 1.05px #555, 0 2.01px 0 #fff;
 	color:#dfdfdf;
+	display:block;
 }
 
 

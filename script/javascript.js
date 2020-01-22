@@ -21,10 +21,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+/******************************************************************************/
+	
+	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
 	
 /******************************************************************************/
 
-document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
+	function ReSize(){
+	$(".columns").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
+
+			if (window.matchMedia('(min-width: 750px)').matches) {		
+				//$("iframe").css({"width": "100%","height":"400px"});
+				$(".columns").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
+			} else {
+				//$("iframe").css({"width": "100%","height":"350px"});
+				$(".columns").css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
+			}
+			
+
+	
+	};
+
+	
+/******************************************************************************/
 
 	let js = function( name ){
 		var script = document.createElement('script');	
@@ -87,7 +106,7 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 
 	// ANALITICS
 	let SendToAnalytics = function(){
-        _paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
+        _paq.push(['setCustomUrl', '#/' + window.location.hash.substr(1)]);
         _paq.push(['trackPageView']);
 	};
 
@@ -191,19 +210,18 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 					url: noCache( "/pages/" + result +"/start.html" ),
 				}).done(function( data ) {
 					
-					$( '.page' ).html( data ).fadeIn( 200 );
+					$( '.page' ).html( data ).fadeIn( 500 );
 					$( '.title h2' ).text( parts[0] );
 					$( 'nav .' + parts[0] ).addClass( 'selected' );
 					
-					
-					
 					document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
-
 					
 				}).fail(function(){
 					error( result, 404 );	
 				});
 			});
+			
+			SendToAnalytics();
 
 		};
 		
@@ -228,7 +246,6 @@ document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.g
 		$(window).bind( 'hashchange', function(e) {
 			AllAnchorToOnClick();
 			UrlByOnClick();
-			SendToAnalytics();
 		});
 		
 		// FIRST TRIGGER
