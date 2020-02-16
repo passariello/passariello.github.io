@@ -104,11 +104,11 @@ SOFTWARE.
 
 /******************************************************************************/
 
-	// ANALITICS
+	// MOTOMO
 
 	let SendToAnalytics = function(){
-        _paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
-        _paq.push( ['trackPageView'] );
+			_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
+			_paq.push( ['trackPageView'] );
 	};
 	
 
@@ -271,7 +271,8 @@ SOFTWARE.
 					
 				});
 			
-			SendToAnalytics();
+			SendToAnalytics(); 
+			//MOTOMO
 
 		};
 		
