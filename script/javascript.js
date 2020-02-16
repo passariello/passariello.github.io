@@ -58,10 +58,10 @@ SOFTWARE.
 /******************************************************************************/
 
 	let css = function( src , media , id ){
-		
+		var stylesheet = document.createElement('link');
 		if(id) stylesheet.id = id;
 		if(media) stylesheet.media = media;
-		var stylesheet = document.createElement('link');
+
 		var d = new Date();
 		var seconds = Math.round(d.getTime() / 1000);
 		
@@ -307,8 +307,11 @@ SOFTWARE.
 	
 	/**************************************************************************/
 	
-	js('//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
-
+	 js( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
+	css( '//fonts.googleapis.com/css?family=Lato&amp;display=swap' , 'all' , '' );
+	css( '//fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
+	css( '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );
+		
 	try{
 		Exec();
 	}catch(e){
