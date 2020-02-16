@@ -114,25 +114,5 @@ ul {
 }
 
 
-*::-webkit-scrollbar {
-	width:4px;
-	height:4px;
-	scroll-behavior: smooth;
-}
- 
-*::-webkit-scrollbar-thumb {
-	background: #444;
-}
-
-*::-webkit-scrollbar-track {
-	background: transparent;
-	margin:3px 3px;
-}
-
-*{
-	scrollbar-width: thin;
-	scrollbar-color: #444 transparent;
-	scroll-behavior: smooth;
-}
 
 

@@ -131,6 +131,30 @@ SOFTWARE.
 
 	var Exec = function(){
 		
+		// SCROLLBAR
+		//**********************************
+		
+		$( '*' ).css({	
+			'scrollbar-width': 'thin',
+			'scrollbar-color': '#444 transparent',
+			'scroll-behavior': 'smooth'
+		});		
+		
+		$( '*::-webkit-scrollbar' ).css({	
+			'width':'4px',
+			'height':'4px',
+			'scroll-behavior': 'smooth'
+		});	
+		
+		$( '*::-webkit-scrollbar-thumb' ).css({	
+			'background':'#444'
+		});
+		
+		$( '*::-webkit-scrollbar-track' ).css({	
+			'background': 'transparent',
+			'margin':'3px 3px'
+		});
+		
 		// DECORATION
 		//**********************************
 		$( '<div class="flare"></div>' ).appendTo('body').css({'top':'-20%','left':'5vw','width':'500px','height':'500px'});
