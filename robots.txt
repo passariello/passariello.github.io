@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /pages/
-Disallow: /css/
-Disallow: /pages/
+Allow: /
