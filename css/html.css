@@ -28,8 +28,6 @@ html, body{
 	margin:0;
 	padding:0;
 	position:relative;
-	outline: none;
-	outline-style: none;
 	vertical-align: top;
 	text-align: left;
 	text-overflow: ellipsis;
