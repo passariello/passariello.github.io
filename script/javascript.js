@@ -234,6 +234,8 @@ SOFTWARE.
 						.scrollTop(0);
 						//.animate({'scrollTop':0},{'duration':1,easing:'swing'});						
 						
+						$( '#shownavinput' ).prop('checked', false);
+												
 						$( '.title h2' ).text( parts[0] );
 						$( 'nav .' + parts[0] ).addClass( 'selected' );
 						

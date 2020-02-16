@@ -7,7 +7,7 @@
 		<meta name="author" content="Dario Passariello">
 		<meta name="keywords" content="Developer / Graphic Designer / Trainer">
 		<meta name="description" content="This is what I am, nothing else... Dario"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, minimum-scale=0.8">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="theme-color" content="#ffffff">
 		
@@ -24,6 +24,8 @@
 		<link rel="stylesheet" href="/css/bootstrap.css">
 		<link rel="stylesheet" href="/css/html.css">
 		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/mobile.css">
+
 		
 	</head>
 
@@ -32,18 +34,22 @@
 		<div class="container">
 		
 			<header class="header">
-			
+
+				
 				<h1>Dario Passariello</h1>
 				<h2>Developer / Graphic Designer / Trainer</h2>
-				<img src="//s.gravatar.com/avatar/01a45ddbdc5d19503265cebdbc9b5c2f?s=180" alt="Dario Passariello website" width="180" height="180"  />
-							
+				<img class="avatar" src="//s.gravatar.com/avatar/01a45ddbdc5d19503265cebdbc9b5c2f?s=180" alt="Dario Passariello website" width="180" height="180"  />							
 			</header>
 			
 			<main>
-			
-				<nav class="nav">	
+
+				<div>	
+		
+				<label for="shownavinput"></label>
+					<input type="checkbox" id="shownavinput">
 				
-					<nav>
+				
+				<nav class="nav">
 						<ul>
 							<li><a href="/#/home/"><i class="fa fa-home"></i>home</a></li>
 							<li><a href="/#/about/"><i class="fa fa-user"></i>about</a></li>
@@ -53,10 +59,9 @@
 							<li><a href="/#/links/"><i class="fa fa-th-list"></i>links</a></li>
 							<li><a href="/#/contact/"><i class="fa fa-comment"></i>contact</a></li>
 						</ul>
+						
 					</nav>
-					
-					
-				</nav>
+				</div>
 				
 				<div class="main">						
 					<div class="title"><h2>Welcome guys!</h2></div>

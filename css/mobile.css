@@ -1,0 +1,154 @@
+/*
+CREATED BY DARIO PASSARIELLO 
+copyright (c) 2020
+
+
+The MIT License (MIT)
+Copyright (c) 2020 Dario Passariello
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+@media only screen and (max-width: 959px) {
+  /******************************************/
+ 
+body{
+	padding:0;
+	overflow-x:hidden
+}
+
+.container {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	overflow:hidden;
+	border:0;
+	border-radius:0;
+	z-index:2;
+	display:none
+}
+ 
+.header img.avatar{
+	width:80px;
+	height:80px;
+}
+
+.shownav {
+	position:absolute;
+	width:40px;
+	top:95px;
+	right:30px;
+	display:block;
+	z-index:10;
+	filter:invert(1);
+}
+
+.header h1,
+.header h2{
+	left:130px;
+}
+
+.title{
+	left:0;
+}
+
+.nav {
+	top:150px;
+	width:100%;
+	position:absolute;
+	display:none;
+	padding:10px;
+}
+
+#shownavinput{
+	z-index:10;
+	position:absolute;
+}
+
+#shownavinput{
+    display: none;
+}
+
+label[for="shownavinput"]:before {
+	background: url('/images/bars.svg')no-repeat;
+	content: "";
+	height: 75px;
+	width: 75px;
+	position: absolute;
+	width:40px;
+	top:95px;
+	right:30px;
+	display:block;
+	z-index:10;
+	filter:invert(1);
+}
+
+#shownavinput:checked ~ .nav {
+	display:block;
+}
+
+.page {
+	left:0;
+}
+ 
+.footer {
+    padding: 18px;
+}
+
+.footer p:nth-child(2) {
+    float: left;
+	clear:both;
+}
+    
+  /******************************************/
+}
+
+
+@media only screen and (max-width: 500px) {
+  /******************************************/
+
+article.contact figure,
+article.contact figure img{
+	display:none;
+	width:0 !important;
+}
+
+.page, .nav {
+	bottom:60px;
+}
+
+.footer {
+    padding: 9px;
+    height: 60px;
+    border-width: 0 0 0 130px;
+    font-size: 0.7em;
+}
+
+.footer img {
+    left: -117px;
+    width: 105px;
+    height: auto;
+} 
+   
+.footer span {
+    bottom: 52.5px;
+}
+  
+    
+  /******************************************/
+}

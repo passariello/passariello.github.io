@@ -23,7 +23,7 @@ SOFTWARE.
 
 .container {
 	max-width: 960px;
-	min-width:480px;
+	min-width:400px;
 	height:100%;
 	min-height:480px;
 	position:relative;
@@ -72,7 +72,11 @@ SOFTWARE.
 	color:#666
 }
 
-.header img {
+.shownav {
+	display:none;
+}
+
+.header img.avatar {
 	position:absolute;
 	top:14px;
 	left:35px;
