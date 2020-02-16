@@ -28,8 +28,6 @@ html, body{
 	margin:0;
 	padding:0;
 	position:relative;
-	outline: none;
-	outline-style: none;
 	vertical-align: top;
 	text-align: left;
 	text-overflow: ellipsis;
@@ -114,25 +112,5 @@ ul {
 }
 
 
-*::-webkit-scrollbar {
-	width:4px;
-	height:4px;
-	scroll-behavior: smooth;
-}
- 
-*::-webkit-scrollbar-thumb {
-	background: #444;
-}
-
-*::-webkit-scrollbar-track {
-	background: transparent;
-	margin:3px 3px;
-}
-
-*{
-	scrollbar-width: thin;
-	scrollbar-color: #444 transparent;
-	scroll-behavior: smooth;
-}
 
 

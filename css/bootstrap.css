@@ -21,17 +21,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-*,
-*::before,
-*::after {
+*{
 	margin: 0;
 	padding: 0;
 	border: 0;
 	vertical-align: top;
 	outline:0;
-	outline-style:0;
+	outline-style:none;
 	box-sizing: border-box;
-	scroll-behavior: smooth;
 }
 
 article,

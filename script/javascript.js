@@ -104,11 +104,11 @@ SOFTWARE.
 
 /******************************************************************************/
 
-	// ANALITICS
+	// MOTOMO
 
 	let SendToAnalytics = function(){
-        _paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
-        _paq.push( ['trackPageView'] );
+			_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
+			_paq.push( ['trackPageView'] );
 	};
 	
 
@@ -130,6 +130,30 @@ SOFTWARE.
 /******************************************************************************/
 
 	var Exec = function(){
+		
+		// SCROLLBAR
+		//**********************************
+		
+		$( '*' ).css({	
+			'scrollbar-width': 'thin',
+			'scrollbar-color': '#444 transparent',
+			'scroll-behavior': 'smooth'
+		});		
+		
+		$( '*::-webkit-scrollbar' ).css({	
+			'width':'4px',
+			'height':'4px',
+			'scroll-behavior': 'smooth'
+		});	
+		
+		$( '*::-webkit-scrollbar-thumb' ).css({	
+			'background':'#444'
+		});
+		
+		$( '*::-webkit-scrollbar-track' ).css({	
+			'background': 'transparent',
+			'margin':'3px 3px'
+		});
 		
 		// DECORATION
 		//**********************************
@@ -234,6 +258,8 @@ SOFTWARE.
 						.scrollTop(0);
 						//.animate({'scrollTop':0},{'duration':1,easing:'swing'});						
 						
+						$( '#shownavinput' ).prop('checked', false);
+												
 						$( '.title h2' ).text( parts[0] );
 						$( 'nav .' + parts[0] ).addClass( 'selected' );
 						
@@ -245,7 +271,8 @@ SOFTWARE.
 					
 				});
 			
-			SendToAnalytics();
+			SendToAnalytics(); 
+			//MOTOMO
 
 		};
 		
