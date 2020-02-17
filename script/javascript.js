@@ -167,7 +167,7 @@ SOFTWARE.
 		
 		// IMAGE AS HOMEPAGE
 		$('.avatar').click(function(){
-			window.location.hash = "/#/home/";
+			window.location = "/home";
 		});
 		
 		// GLOBAL SETUP
@@ -201,7 +201,7 @@ SOFTWARE.
 		//**********************************	
 		let AllAnchorToOnClick = function(){
 		
-			$('nav ul li a').each( function(index) {
+			$('nav li a').each( function(index) {
 				var elem = $( this );
 				var href = elem.attr( 'href' );
 			
