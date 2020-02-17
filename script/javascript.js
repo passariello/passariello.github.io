@@ -165,6 +165,11 @@ SOFTWARE.
 		//**********************************	
 		$( '.container' ).fadeIn( 500 );
 		
+		// IMAGE AS HOMEPAGE
+		$('.avatar').click(function(){
+			UrlByOnClick('/');
+		});
+		
 		// GLOBAL SETUP
 		//**********************************
 		let currentTime = new Date();
