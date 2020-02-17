@@ -39,8 +39,6 @@ body{
 	overflow:hidden;
 	border:0;
 	border-radius:0;
-	z-index:2;
-	display:none
 }
  
 .header img.avatar{
