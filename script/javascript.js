@@ -46,31 +46,21 @@ SOFTWARE.
 /******************************************************************************/
 
 	let js = function( name ){
-		var script = document.createElement('script');	
 		var d = new Date();
 		var seconds = Math.round(d.getTime() / 1000);
-		
-		script.setAttribute("type", "text/javascript");
-		script.setAttribute("src", name + '?t=' + seconds );
-		document.getElementsByTagName("head")[0].appendChild(script);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src = name + '?t=' + seconds; 
+		s.parentNode.insertBefore(g,s);
 	};
 
 /******************************************************************************/
 
-	let css = function( src , media , id ){
-		var stylesheet = document.createElement('link');
-		if(id) stylesheet.id = id;
-		if(media) stylesheet.media = media;
-
+	let css = function( name , media , id ){
 		var d = new Date();
 		var seconds = Math.round(d.getTime() / 1000);
-		
-		stylesheet.href = src + '?t=' + seconds;
-		stylesheet.rel = 'stylesheet';
-		stylesheet.type = 'text/css';
-		
-		document.getElementsByTagName('head')[0].appendChild(stylesheet);
-		
+		var d=document, g=d.createElement('link'), s=d.getElementsByTagName('link')[0];
+		g.rel='stylesheet'; g.type='text/css'; g.id=id; g.media=media; g.href = name + '?t=' + seconds; 
+		s.parentNode.insertBefore(g,s);	
 	};
 	
 /******************************************************************************/
