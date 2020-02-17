@@ -45,22 +45,6 @@ SOFTWARE.
 
 /*****************************************************************************/
 
-div.noscript {
-    display: block;
-    text-align: center;
-    color: white;
-    font-weight: 700;
-    background: #D53333;
-    padding: 20px;
-	position:absolute;
-	top:50%;
-	left:0;
-	right:0;
-	z-index:1000
-}
-
-/*****************************************************************************/
-
 .header {
 	height:90px;
 	padding: 10px 20px;
