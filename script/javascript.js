@@ -167,7 +167,7 @@ SOFTWARE.
 		
 		// IMAGE AS HOMEPAGE
 		$('.avatar').click(function(){
-			window.location = "/home";
+			window.location.hash = "/home";
 		});
 		
 		// GLOBAL SETUP
