@@ -99,7 +99,8 @@ div.noscript {
 	height:140px;
 	border-radius:50%;
 	z-index:5;
-	border:2px solid #00aaff
+	border:2px solid #00aaff;
+	cursor:pointer;
 }
 
 .header:before {

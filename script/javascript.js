@@ -167,7 +167,7 @@ SOFTWARE.
 		
 		// IMAGE AS HOMEPAGE
 		$('.avatar').click(function(){
-			window.location.hash = "/home";
+			window.location.hash = "/home/";
 		});
 		
 		// GLOBAL SETUP
@@ -233,8 +233,8 @@ SOFTWARE.
 			var result = window.location.hash.substr(1);
 			console.log( result.replace(/\//g, '') );
 			
-			if (result.indexOf('?') > -1) window.location.hash = "/home";	
-			if (result.indexOf('#') > -1) window.location.hash = "/home";	
+			if (result.indexOf('?') > -1) window.location.hash = "/home/";	
+			if (result.indexOf('#') > -1) window.location.hash = "/home/";	
 			
 			/*
 			var result = hash.split('/').reduce(function (result, item) {
