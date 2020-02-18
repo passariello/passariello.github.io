@@ -44,8 +44,6 @@ body:before{
 
 body{
 	position: fixed;
-    overflow-x: auto;
-    overflow-y: scroll;
 	padding:10px;
 	-webkit-overflow-scrolling: touch;
 	/* iOS velocity scrolling */
