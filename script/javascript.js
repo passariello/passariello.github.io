@@ -37,8 +37,6 @@ SOFTWARE.
 				//$("iframe").css({"width": "100%","height":"350px"});
 				$(".columns").css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
 			}
-			
-
 	
 	};
 
@@ -60,7 +58,11 @@ SOFTWARE.
 		var seconds = Math.round(d.getTime() / 1000);
 		var d=document, g=d.createElement('link'), s=d.getElementsByTagName('link')[0];
 		g.rel='stylesheet'; g.type='text/css'; g.id=id; g.media=media; g.href = name + '?t=' + seconds; 
-		s.parentNode.insertBefore(g,s);	
+		s.parentNode.insertBefore(g,s);
+		p=d.createElement('link'), w=d.getElementsByTagName('link')[0];
+		p.rel='preload'; p.as='style'; p.type='text/css'; p.href = name + '?t=' + seconds;
+		w.parentNode.insertBefore(p,w);
+
 	};
 	
 /******************************************************************************/
@@ -97,8 +99,8 @@ SOFTWARE.
 	// MOTOMO
 
 	let SendToAnalytics = function(){
-			_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
-			_paq.push( ['trackPageView'] );
+		_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
+		_paq.push( ['trackPageView'] );
 	};
 	
 
@@ -221,7 +223,7 @@ SOFTWARE.
 			var d = new Date();
 			var seconds = Math.round(d.getTime() / 1000);
 			var result = window.location.hash.substr(1);
-			console.log( result.replace(/\//g, '') );
+			//console.log( result.replace(/\//g, '') );
 			
 			if (result.indexOf('?') > -1) window.location.hash = "/home/";	
 			if (result.indexOf('#') > -1) window.location.hash = "/home/";	
@@ -239,7 +241,8 @@ SOFTWARE.
 			
 			result = result.replace("/" , "");			
 			var parts = result.split('/');
-			css( "/pages/" + result +"/style.css",'','' );	
+			
+			css( "/pages/" + result +"/style.css",'all','' );	
 			
 				$('.page').fadeOut( 200 , function(){
 					
@@ -298,32 +301,14 @@ SOFTWARE.
 		//**********************************	
 		$( document ).trigger('hashchange');
 
-		// MATOMO
-		//**********************************			
-		var _paq = window._paq || [];
-		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-		_paq.push(['trackPageView']);
-		_paq.push(['enableLinkTracking']);
-		(function(){
-			var u="//www.biglogic.ca/stat/";
-			_paq.push(['setTrackerUrl', u+'matomo.php']);
-			_paq.push(['setSiteId', '7']);
-			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-			g.type='text/javascript'; 
-			g.async=true; 
-			g.defer=true; 
-			g.src=u+'matomo.js'; 
-			s.parentNode.insertBefore(g,s);
-		})();
-		
 	};
 	
 	/**************************************************************************/
 	
 	 js( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
+	css( '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );	 
 	css( '//fonts.googleapis.com/css?family=Lato&amp;display=swap' , 'all' , '' );
 	css( '//fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
-	css( '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );
 		
 	try{
 		Exec();
@@ -331,6 +316,24 @@ SOFTWARE.
 		window.addEventListener("load", function(){ Exec();	} ,false);
 	}
 
+	/**************************************************************************/
+
+	// MATOMO
+
+	var _paq = window._paq || [];
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function(){
+		var u="//www.biglogic.ca/stat/";
+		_paq.push(['setTrackerUrl', u+'matomo.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; 
+		g.async=true; 
+		g.defer=true; 
+		g.src=u+'matomo.js'; 
+		s.parentNode.insertBefore(g,s);
+	})();
 
 
 
