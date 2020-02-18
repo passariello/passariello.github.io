@@ -307,7 +307,7 @@ SOFTWARE.
 	
 	 js( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
 	css( '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );	 
-	css( '//fonts.googleapis.com/css?family=Lato&amp;display=swap' , 'all' , '' );
+	css( '//fonts.googleapis.com/css?family=Lato&display=swap' , 'all' , '' );
 	css( '//fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
 		
 	try{
