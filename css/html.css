@@ -27,10 +27,6 @@ html{
 	width: 100%;
 } 
 
-html, body {
-	height: 100%;
-}
-
 body:before{
 	content: '';
 	background-image: 
@@ -55,14 +51,12 @@ body{
 	padding:10px;
 	-webkit-overflow-scrolling: touch;
 	/* iOS velocity scrolling */
-	width: 100%;
 	vertical-align: top;
 	text-align: left;
 	text-overflow: ellipsis;
 	font-size:1.01em;
 	font-family: Lato, Helvetica, Arial, sans-serif;
 	color:#000;
-	background-color: white;
 	cursor:default;
         -webkit-overflow-scrolling: touch;
 	z-index:1;
