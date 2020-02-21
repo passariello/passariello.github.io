@@ -116,23 +116,6 @@ SOFTWARE.
 		// MATOMO
 		//**********************************
 			
-		var _paq = window._paq || [];
-		(function(){
-			var u="//www.biglogic.ca/stat/";
-			_paq.push(['setTrackerUrl', u+'matomo.php']);
-			_paq.push(['setSiteId', '7']);
-			_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-			_paq.push(["setCookieDomain", "*.https;"]);
-			_paq.push(['trackPageView']);
-			_paq.push(['enableLinkTracking']);
-			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-			g.type='text/javascript'; 
-			g.async=true; 
-			g.defer=true; 
-			g.src=u+'matomo.js'; 
-			s.parentNode.insertBefore(g,s);
-		})();
-
 		let SendToAnalytics = function(){
 			if( _paq ){
 				_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
@@ -333,6 +316,21 @@ SOFTWARE.
 		window.addEventListener("load", function(){ Exec();	} ,false);
 	};
 
-
+		var _paq = window._paq || [];
+		(function(){
+			var u="//www.biglogic.ca/stat/";
+			_paq.push(['setTrackerUrl', u+'matomo.php']);
+			_paq.push(['setSiteId', '7']);
+			_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+			_paq.push(["setCookieDomain", "*.https;"]);
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; 
+			g.async=true; 
+			g.defer=true; 
+			g.src=u+'matomo.js'; 
+			s.parentNode.insertBefore(g,s);
+		})();
 
 
