@@ -314,12 +314,12 @@ SOFTWARE.
 		Exec();
 	}catch(e){
 		window.addEventListener("load", function(){ Exec();	} ,false);
-	}
+	};
 
 	/**************************************************************************/
-
 	// MATOMO
-
+	
+window.onload = function(){
 	var _paq = window._paq || [];
 	(function(){
 		var u="//www.biglogic.ca/stat/";
@@ -336,6 +336,6 @@ SOFTWARE.
 		g.src=u+'matomo.js'; 
 		s.parentNode.insertBefore(g,s);
 	})();
-
+};
 
 
