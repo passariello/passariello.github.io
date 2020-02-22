@@ -139,23 +139,18 @@ article.about div:not(:first-child){
 	bottom:60px;
 }
 
-<<<<<<< Updated upstream
-.page article {
-=======
+
 .page article{
->>>>>>> Stashed changes
 	padding:10px 10px 20px 10px;
 }
 
 .page article h2, 
 .page article h3 {
-<<<<<<< Updated upstream
 	font-size:2.2em
 }
 
 .page p{
 	padding: 10px;
-=======
 	font-size:2em;
 }
 
@@ -165,7 +160,6 @@ article.about div:not(:first-child){
 
 article.about div:not(:first-child) {
 	margin-top:0;
->>>>>>> Stashed changes
 }
 
 .footer {
