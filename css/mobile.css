@@ -66,6 +66,10 @@ body{
 	left:0;
 }
 
+.page{
+	font-size:1.2em;
+}
+
 .nav {
 	top:150px;
 	width:100%;
@@ -139,6 +143,9 @@ article.about div:not(:first-child){
 	bottom:60px;
 }
 
+.page{
+	font-size:1.2em;
+}
 
 .page article{
 	padding:10px 10px 20px 10px;
