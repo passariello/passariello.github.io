@@ -44,6 +44,7 @@ body{
 .header img.avatar{
 	width:80px;
 	height:80px;
+	margin-left:-20px
 }
 
 .shownav {
@@ -58,7 +59,7 @@ body{
 
 .header h1,
 .header h2{
-	left:130px;
+	left:110px;
 }
 
 .title{
@@ -126,8 +127,29 @@ article.contact figure img{
 	width:0 !important;
 }
 
+article.about div:not(:first-child){
+	margin-top: 10px;
+}
+
+.header h2{
+	font-size:1em
+}
+
 .page, .nav {
 	bottom:60px;
+}
+
+.page article {
+	padding:10px 10px 20px 10px;
+}
+
+.page article h2, 
+.page article h3 {
+	font-size:2.2em
+}
+
+.page p{
+	padding: 10px;
 }
 
 .footer {

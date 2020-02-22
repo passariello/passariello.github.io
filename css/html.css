@@ -193,7 +193,7 @@ blockquote:before,
 blockquote:after,
 q:before, 
 q:after {
-	content: '.';
+	content: '';
 	content: none;
 }
 
@@ -207,7 +207,7 @@ table {
 }
 
 .clearfix:after {
-	content: ".";
+	content: "";
 	display: block;
 	height: 0;
 	clear: both;
