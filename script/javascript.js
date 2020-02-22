@@ -77,10 +77,6 @@ SOFTWARE.
 		var d=document, g=d.createElement('link'), s=d.getElementsByTagName('link')[0];
 		g.rel='stylesheet'; g.type='text/css'; g.id=id; g.media=media; g.href = name + '?t=' + seconds; 
 		s.parentNode.insertBefore(g,s);
-		p=d.createElement('link'), w=d.getElementsByTagName('link')[0];
-		p.rel='preload'; p.as='style'; p.type='text/css'; p.href = name + '?t=' + seconds;
-		w.parentNode.insertBefore(p,w);
-
 	};
 	
 /******************************************************************************/
