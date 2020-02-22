@@ -149,11 +149,6 @@ article.about div:not(:first-child){
 	font-size:2.2em
 }
 
-.page p{
-	padding: 10px;
-	font-size:2em;
-}
-
 .page article p {
 	padding:0 20px
 }
