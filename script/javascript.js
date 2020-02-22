@@ -21,6 +21,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+
+	var _paq = window._paq || [];
+	(function(){
+		var u="//www.biglogic.ca/stat/";
+		_paq.push(['setTrackerUrl', u+'matomo.php']);
+		_paq.push(['setSiteId', '7']);
+		_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+		_paq.push(["setCookieDomain", "*.https;"]);
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; 
+		g.async=true; 
+		g.defer=true; 
+		g.src=u+'matomo.js'; 
+		s.parentNode.insertBefore(g,s);
+	})();
+
 /******************************************************************************/
 	
 	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
@@ -310,32 +328,14 @@ SOFTWARE.
 	css( '//fonts.googleapis.com/css?family=Lato&display=swap' , 'all' , '' );
 	css( '//fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
 		
+	
 	try{
 		Exec();
 	}catch(e){
 		window.addEventListener("load", function(){ Exec();	} ,false);
 	};
 
-	/**************************************************************************/
-	// MATOMO
-	
-window.onload = function(){
-	var _paq = window._paq || [];
-	(function(){
-		var u="//www.biglogic.ca/stat/";
-		_paq.push(['setTrackerUrl', u+'matomo.php']);
-		_paq.push(['setSiteId', '7']);
-		_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-		_paq.push(["setCookieDomain", "*.https;"]);
-		_paq.push(['trackPageView']);
-		_paq.push(['enableLinkTracking']);
-		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-		g.type='text/javascript'; 
-		g.async=true; 
-		g.defer=true; 
-		g.src=u+'matomo.js'; 
-		s.parentNode.insertBefore(g,s);
-	})();
-};
+
+
 
 
