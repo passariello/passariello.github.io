@@ -278,7 +278,7 @@ SOFTWARE.
 						document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
 						
 					}).fail(function(){
-						error( result, 404 );	
+						//error( result, 404 );	
 					});
 					
 				});
@@ -289,9 +289,13 @@ SOFTWARE.
 		};
 		
 		//**********************************
+		
 		let error = function( page, error ){
-			var $page;
-			switch ( error ) {	case 404: $page = 404; break;
+
+		var $page;
+			
+			switch ( error ) {	
+				case 404: $page = 404; break;
 				default: null;
 			}
 			
@@ -302,6 +306,7 @@ SOFTWARE.
 				$.ajax({ url: noCache( "/pages/errors/" + $page + ".html" )}).done(function( data ) {
 					$( '.page' ).html( data ).fadeIn( 200 );
 				});
+
 		};
 		
 		// CHANGE HASH
