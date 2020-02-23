@@ -278,7 +278,7 @@ SOFTWARE.
 						document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
 						
 					}).fail(function(){
-						//error( result, 404 );	
+						error( result, 404 );	
 					});
 					
 				});
@@ -330,13 +330,4 @@ SOFTWARE.
 	css( '//fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
 		
 	
-	try{
-		Exec();
-	}catch(e){
-		window.addEventListener("load", function(){ Exec();	} ,false);
-	};
-
-
-
-
-
+	try{ Exec(); }catch(e){ window.addEventListener("load", function(){ Exec(); } ,false); };
