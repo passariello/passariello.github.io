@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
+/*
 	var _paq = window._paq || [];
 	(function(){
 		var u="//www.biglogic.ca/stat/";
@@ -38,6 +38,17 @@ SOFTWARE.
 		g.src=u+'matomo.js'; 
 		s.parentNode.insertBefore(g,s);
 	})();
+	
+//********************************************************************************************
+
+	//MOTOMO
+
+	let SendToAnalytics = function(){
+		_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
+		_paq.push( ['trackPageView'] );
+	};
+		
+*/
 
 /******************************************************************************/
 	
@@ -108,15 +119,6 @@ SOFTWARE.
 
 	this.addEventListener('mousedown',function(e){DisableSelect();}, false);
 
-/******************************************************************************/
-
-	// MOTOMO
-
-	let SendToAnalytics = function(){
-		_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
-		_paq.push( ['trackPageView'] );
-	};
-	
 
 /******************************************************************************/
 
