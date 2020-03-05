@@ -165,9 +165,9 @@ SOFTWARE.
 		
 		// DECORATION
 		//**********************************
-		$( '<div class="flare"></div>' ).appendTo('body').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
-		$( '<div class="flare"></div>' ).appendTo('body').css({'top':'10%','right':'5vw','width':'200px','height':'200px','z-index':'1'});	
-		$( '<div class="flare"></div>' ).appendTo('body').css({'top':'20%','right':'10vw','width':'250px','height':'250px','z-index':'1'});	
+		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
+		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'10%','right':'5vw','width':'200px','height':'200px','z-index':'1'});	
+		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'20%','right':'10vw','width':'250px','height':'250px','z-index':'1'});	
 		
 		// SHOW PAGE
 		//**********************************	
@@ -234,7 +234,7 @@ SOFTWARE.
 		//**********************************		
 		let UrlByOnClick = function(){	
 
-			$('<div class="loader"><i></i></div>').appendTo('.page');
+			$('<div class="loader"><i></i></div>').appendTo('html');
 
 			var d = new Date();
 			var seconds = Math.round(d.getTime() / 1000);
@@ -258,18 +258,27 @@ SOFTWARE.
 			result = result.replace("/" , "");			
 			var parts = result.split('/');
 			
-			css( "/pages/" + result +"/style.css",'all','' );	
+			css( "/pages/" + result +"/style.css",'all','' );
 			
-				$('.page').fadeOut( 200 , function(){
+				var current_height = $('.container').outerHeight();
+				$('.container').css("min-height", current_height);
+			
+				$('.page').fadeOut( 500 , function(){
 					
 					$.ajax({
 						url: noCache( "/pages/" + result +"/start.html" ),
 					}).done(function( data ) {
 						
+						$('.container').css("min-height", 0);
+						
 						$( '.page' )
+						.hide()
 						.html( data )
-						.fadeIn( 500 )
+						.fadeIn( 500 , function(){							 
+							$( '.loader' ).fadeOut( 500 ); 							
+						})						
 						.scrollTop(0);
+						
 						//.animate({'scrollTop':0},{'duration':1,easing:'swing'});						
 						
 						$( '#shownavinput' ).prop('checked', false);
@@ -285,7 +294,7 @@ SOFTWARE.
 					
 				});
 			
-			SendToAnalytics(); 
+			//SendToAnalytics(); 
 			//MOTOMO
 
 		};

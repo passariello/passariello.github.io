@@ -25,11 +25,7 @@ SOFTWARE.
 @media only screen and (max-width: 959px) {
   /******************************************/
  
-body{
-	padding:0;
-	overflow-x:hidden
-}
-
+body,
 .container {
 	position:absolute;
 	left:0;
@@ -67,7 +63,14 @@ body{
 }
 
 .page{
-	font-size:1.2em;
+	position:absolute;
+	top:150px;
+	bottom:60px;
+	left:0;
+	right:0;
+	overflow:scroll;
+	padding:0;
+	min-height:0;
 }
 
 .nav {
@@ -76,6 +79,10 @@ body{
 	position:absolute;
 	display:none;
 	padding:10px;
+}
+
+#background{
+	display:hidden;
 }
 
 #shownavinput{
@@ -105,10 +112,6 @@ label[for="shownavinput"]:before {
 	display:block;
 }
 
-.page {
-	left:0;
-}
- 
 .footer {
     padding: 18px;
 }
@@ -139,16 +142,12 @@ article.about div:not(:first-child){
 	font-size:1em
 }
 
-.page, .nav {
-	bottom:60px;
-}
-
 .page{
 	font-size:1.2em;
 }
 
 .page article{
-	padding:10px 10px 20px 10px;
+	padding:20px;
 }
 
 .page article h2, 
