@@ -125,7 +125,7 @@ SOFTWARE.
 	let iframeSize = function(){
 		$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
 
-				if (window.matchMedia('(min-width: 750px)').matches) {		
+				if (window.matchMedia('(min-width: 950px)').matches) {		
 					$("iframe").css({"width": "100%","height":"400px"});
 					$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
 				} else {
@@ -256,7 +256,8 @@ SOFTWARE.
 			if( !result ) result = 'home';
 			
 			result = result.replace("/" , "");			
-			result = result.replace("!" , "");			
+			result = result.replace("!" , "");	
+			
 			var parts = result.split('/');
 			
 			css( "/pages/" + result +"/style.css",'all','' );
