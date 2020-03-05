@@ -65,7 +65,7 @@ body,
 .page{
 	position:absolute;
 	top:150px;
-	bottom:60px;
+	bottom:75px;
 	left:0;
 	right:0;
 	overflow:scroll;
@@ -75,6 +75,7 @@ body,
 
 .nav {
 	top:150px;
+	bottom:75px;
 	width:100%;
 	position:absolute;
 	display:none;
@@ -144,6 +145,11 @@ article.about div:not(:first-child){
 
 .page{
 	font-size:1.2em;
+}
+
+.page,
+.nav{
+	bottom:55px;
 }
 
 .page article{
