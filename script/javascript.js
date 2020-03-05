@@ -263,8 +263,9 @@ SOFTWARE.
 						$( '.page' )
 						.hide()
 						.html( data )
-						.fadeIn( 500 , function(){							 
-							$( '.loader' ).fadeOut( 500 ); 							
+						.fadeIn( 500 , function(){	
+							iframeSize();						 
+							$( '.loader' ).fadeOut( 500 );							
 						});
 
 						$( 'html, body, .page' ).animate({ scrollTop: "0" }, 500);					
