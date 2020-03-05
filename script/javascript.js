@@ -167,7 +167,9 @@ SOFTWARE.
 		//**********************************
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'10%','right':'5vw','width':'200px','height':'200px','z-index':'1'});	
-		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'20%','right':'10vw','width':'250px','height':'250px','z-index':'1'});	
+		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'20%','right':'10vw','width':'250px','height':'250px','z-index':'1'});
+
+		
 		
 		// SHOW PAGE
 		//**********************************	
@@ -338,6 +340,23 @@ SOFTWARE.
 
 	};
 	
+	/**************************************************************************/
+	
+			/*
+			var video = document.getElementById("myVideo");
+			var btn = document.getElementById("myBtn");
+
+			function myFunction() {
+				if (video.paused) {
+					video.play();
+					btn.innerHTML = "Pause";
+				} else {
+					video.pause();
+					btn.innerHTML = "Play";
+				}
+			}
+			*/
+			
 	/**************************************************************************/
 	
 	 js( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
