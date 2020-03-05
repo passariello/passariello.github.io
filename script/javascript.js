@@ -256,6 +256,7 @@ SOFTWARE.
 			if( !result ) result = 'home';
 			
 			result = result.replace("/" , "");			
+			result = result.replace("!" , "");			
 			var parts = result.split('/');
 			
 			css( "/pages/" + result +"/style.css",'all','' );
