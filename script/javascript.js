@@ -276,8 +276,11 @@ SOFTWARE.
 						.html( data )
 						.fadeIn( 500 , function(){							 
 							$( '.loader' ).fadeOut( 500 ); 							
-						})						
-						.scrollTop(0);
+						});
+
+						$( 'html, body, .page' ).animate({ scrollTop: "0" }, 500);					
+						
+						//.scrollTop(0);
 						
 						//.animate({'scrollTop':0},{'duration':1,easing:'swing'});						
 						
