@@ -53,7 +53,8 @@ SOFTWARE.
 /******************************************************************************/
 	
 	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
-	
+
+		
 /******************************************************************************/
 
 	let iframeSize = function(){
@@ -323,6 +324,9 @@ SOFTWARE.
 		// FIRST TRIGGER
 		//**********************************	
 		$( document ).trigger('hashchange');
+		$( document ).on( 'resize', iframeSize ); 
+		
+		iframeSize();
 
 	};
 	
