@@ -56,18 +56,18 @@ SOFTWARE.
 	
 /******************************************************************************/
 
-	function ReSize(){
-	$(".columns").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
+	let iframeSize = function(){
+		$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
 
-			if (window.matchMedia('(min-width: 750px)').matches) {		
-				//$("iframe").css({"width": "100%","height":"400px"});
-				$(".columns").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
-			} else {
-				//$("iframe").css({"width": "100%","height":"350px"});
-				$(".columns").css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
-			}
-	
-	};
+		if (window.matchMedia('(min-width: 750px)').matches) {		
+			$("iframe").css({"width": "100%","height":"400px"});
+			$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
+		} else {
+			$("iframe").css({"width": "100%","height":"350px"});
+			$(".about ul").css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
+		}
+				
+	};	
 
 	
 /******************************************************************************/
@@ -119,22 +119,7 @@ SOFTWARE.
 
 	this.addEventListener('mousedown',function(e){DisableSelect();}, false);
 
-
-/******************************************************************************/
-
-	let iframeSize = function(){
-		$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
-
-				if (window.matchMedia('(min-width: 950px)').matches) {		
-					$("iframe").css({"width": "100%","height":"400px"});
-					$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
-				} else {
-					$("iframe").css({"width": "100%","height":"350px"});
-					$(".about ul").css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
-				}
-				
-		};
-		
+	
 /******************************************************************************/
 
 	var Exec = function(){
