@@ -124,13 +124,13 @@ SOFTWARE.
 		
 		// SCROLLBAR
 		//**********************************
-		
+	
 		$( '*' ).css({	
 			'scrollbar-width': 'thin',
 			'scrollbar-color': '#444 transparent',
 			'scroll-behavior': 'smooth'
 		});		
-		
+	/*		
 		$( '*::-webkit-scrollbar' ).css({	
 			'width':'4px',
 			'height':'4px',
@@ -145,7 +145,8 @@ SOFTWARE.
 			'background': 'transparent',
 			'margin':'3px 3px'
 		});
-		
+	*/	
+	
 		// DECORATION
 		//**********************************
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
