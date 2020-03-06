@@ -53,19 +53,17 @@ SOFTWARE.
 /******************************************************************************/
 	
 	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
-
 		
 /******************************************************************************/
 
 	let iframeSize = function(){
-		$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
 
-		if (window.matchMedia('(min-width: 750px)').matches) {		
-			$("iframe").css({"width": "100%","height":"400px"});
-			$(".about ul").css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
+		if ( window.matchMedia('(min-width: 750px)' ).matches) {		
+			//$( "iframe" ).css({"width": "100%","height":"400px"});
+			$( "article ul" ).css({"columns": "2","-webkit-columns":"2","-moz-columns":"2"});
 		} else {
-			$("iframe").css({"width": "100%","height":"350px"});
-			$(".about ul").css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
+			//$( "iframe" ).css({"width": "100%","height":"350px"});
+			$( "article ul" ).css({"columns": "1","-webkit-columns":"1","-moz-columns":"1"});
 		}
 				
 	};	
@@ -110,7 +108,7 @@ SOFTWARE.
 			this.onselectstart = new Function( "return false" );
 			this.oncontextmenu = new Function( "return false" );
 			
-			$('img').on('dragstart', function(e) { e.preventDefault(); });
+			$('img, input, button, a').on('dragstart', function(e) { e.preventDefault(); });
 			
 		});
 		
@@ -120,7 +118,6 @@ SOFTWARE.
 
 	this.addEventListener('mousedown',function(e){DisableSelect();}, false);
 
-	
 /******************************************************************************/
 
 	var Exec = function(){
@@ -155,8 +152,6 @@ SOFTWARE.
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'10%','right':'5vw','width':'200px','height':'200px','z-index':'1'});	
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'20%','right':'10vw','width':'250px','height':'250px','z-index':'1'});
 
-		
-		
 		// SHOW PAGE
 		//**********************************	
 		$( '.container' ).fadeIn( 500 );
@@ -232,15 +227,6 @@ SOFTWARE.
 			if (result.indexOf('?') > -1) window.location.hash = "/home/";	
 			if (result.indexOf('#') > -1) window.location.hash = "/home/";	
 			
-			/*
-			var result = hash.split('/').reduce(function (result, item) {
-				var parts = item.split('=');
-				result[ parts[0] ] = parts[1];
-				console.log( result );
-				return result;	
-			});
-			*/
-
 			if( !result ) result = 'home';
 			
 			result = result.replace("/" , "");			
@@ -248,7 +234,7 @@ SOFTWARE.
 			
 			var parts = result.split('/');
 			
-			css( "/pages/" + result +"/style.css",'all','' );
+			//css( "/pages/" + result +"/style.css",'all','' );
 			
 				var current_height = $('.container').outerHeight();
 				$('.container').css("min-height", current_height);
@@ -261,29 +247,34 @@ SOFTWARE.
 						
 						$('.container').css("min-height", 0);
 						
+
 						$( '.page' )
 						.hide()
 						.html( data )
-						.fadeIn( 500 , function(){	
-							iframeSize();						 
+						.fadeIn( 500 , function(){					 
 							$( '.loader' ).fadeOut( 500 );							
 						});
 
-						$( 'html, body, .page' ).animate({ scrollTop: "0" }, 500);					
+						$('body').fadeIn( 500 , function(){						
+							$( '.loader' ).fadeOut( 500 );
+						});
 						
-						//.scrollTop(0);
-						
-						//.animate({'scrollTop':0},{'duration':1,easing:'swing'});						
+						iframeSize();
+
+						$( 'html, body, .page' ).animate({ scrollTop: "0" }, 500);							
 						
 						$( '#shownavinput' ).prop('checked', false);
 												
 						$( '.title h2' ).text( parts[0] );
 						$( 'nav .' + parts[0] ).addClass( 'selected' );
 						
-						document.title = "Dario Passariello | page: " + parts[0].charAt(0).toUpperCase() + result.slice(1);
+						document.title = "Dario Passariello | " + parts[0].charAt(0).toUpperCase() + result.slice(1).replace(/\//g,"");
+						$('body').css({"display":"block"}).fadeTo(0,1);
+						
+						delete document;
 						
 					}).fail(function(){
-						error( result, 404 );	
+						error( result, 404 );						
 					});
 					
 				});
@@ -308,51 +299,38 @@ SOFTWARE.
 			document.title = "Dario Passariello - Error " + error + ", page " + page + " not found on server";
 			$( '.title h2' ).text( error );
 			
-				$.ajax({ url: noCache( "/pages/errors/" + $page + ".html" )}).done(function( data ) {
+				$.ajax({ url: noCache( "/pages/errors/" + $page + ".html" )}).done(function( data ) {				
 					$( '.page' ).html( data ).fadeIn( 200 );
+					$('body').fadeIn( 500 , function(){						
+						$( '.loader' ).fadeOut( 500 );
+					});
 				});
 
 		};
 		
 		// CHANGE HASH
 		//**********************************	
-		$(window).bind( 'hashchange', function(e) {
+		$( window ).bind( 'hashchange', function(e) {
 			AllAnchorToOnClick();
 			UrlByOnClick();
-		});
+		}).on( 'resize', function(){ iframeSize(); });;
 		
 		// FIRST TRIGGER
 		//**********************************	
 		$( document ).trigger('hashchange');
-		$( document ).on( 'resize', iframeSize ); 
 		
 		iframeSize();
-
+		
 	};
-	
+		
 	/**************************************************************************/
 	
-			/*
-			var video = document.getElementById("myVideo");
-			var btn = document.getElementById("myBtn");
-
-			function myFunction() {
-				if (video.paused) {
-					video.play();
-					btn.innerHTML = "Pause";
-				} else {
-					video.pause();
-					btn.innerHTML = "Play";
-				}
-			}
-			*/
-			
-	/**************************************************************************/
-	
-	 js( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
-	css( '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );	 
-	css( '//fonts.googleapis.com/css?family=Lato&display=swap' , 'all' , '' );
-	css( '//fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
+	 js( 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
+	css( 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );	 
+	css( 'https://fonts.googleapis.com/css?family=Lato&display=swap' , 'all' , '' );
+	css( 'https://fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
 		
 	
 	try{ Exec(); }catch(e){ window.addEventListener("load", function(){ Exec(); } ,false); };
+
+	

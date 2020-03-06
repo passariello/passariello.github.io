@@ -25,6 +25,12 @@ SOFTWARE.
 @media only screen and (max-width: 959px) {
   /******************************************/
  
+article.contact figure,
+article.contact figure img{
+	display:none;
+	width:0 !important;
+}
+
 body,
 .container {
 	position:absolute;
@@ -128,12 +134,6 @@ label[for="shownavinput"]:before {
 
 @media only screen and (max-width: 500px) {
   /******************************************/
-
-article.contact figure,
-article.contact figure img{
-	display:none;
-	width:0 !important;
-}
 
 article.about div:not(:first-child){
 	margin-top: 10px;

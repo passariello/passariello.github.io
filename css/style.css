@@ -33,6 +33,7 @@ SOFTWARE.
 	box-shadow:0 0 250px rgba(0,0,0,.4), 0 20px 30px rgba(0,0,0,.2);
 	border-radius:20px;
 	z-index:2;
+	display:none;
 }
 
 .container:before {
@@ -221,7 +222,7 @@ SOFTWARE.
 	background-color: #f60;
 	border-radius:50%;
 	margin-top:8px;
-	left:-12px;
+	left:-8px;
 	width:6px;
 	height:6px
 }
@@ -229,6 +230,45 @@ SOFTWARE.
 .page p{
 	padding:0 0 20px 30px;
 	color:rgba(0,0,0,.6)
+}
+
+/*****************************************************************************/
+
+article.columns div:not(:first-child){
+	margin-top:20px;
+}
+
+article.columns div ul{
+	padding:10px 20px;
+}
+
+article.columns div ul li{
+	padding:10px;
+	font-size:1em;
+	color:rgba(0,0,0,.5);
+	line-height:1.2em;
+	display:table;
+}
+
+article.columns div ul li span{
+	font-weight:900;
+	font-size:1.1em;
+	color:rgba(0,0,0,.7);
+}
+
+/*****************************************************************************/
+
+article.contact{
+	display:table;
+	width:100%;
+}
+
+article.contact figure{
+	display:table-cell;
+}
+
+article.contact section{
+	display:table-cell;
 }
 
 /*****************************************************************************/
