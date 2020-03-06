@@ -202,13 +202,21 @@ SOFTWARE.
 .page article h3{
 	height:auto;
 	line-height:1em;
-	font-size:3em;
+	font-size:2.5em;
 	margin:15px 0;
-	display:block;	
 	font-weight:900;
 	letter-spacing:-.02em;
 	text-shadow: 0 -1px 1.05px #555, 0 2.01px 0 #fff;
 	color:#dfdfdf;
+	display:block;
+}
+
+.page article h4{
+	height:auto;
+	line-height:1em;
+	font-size:1.3em;
+	margin:-15px 0 15px 0;
+	color:rgba(0,0,0,.4);
 	display:block;
 }
 
@@ -235,7 +243,7 @@ SOFTWARE.
 /*****************************************************************************/
 
 article.columns div:not(:first-child){
-	margin-top:20px;
+	/*margin-top:20px;*/
 }
 
 article.columns div ul{
@@ -254,6 +262,8 @@ article.columns div ul li span{
 	font-weight:900;
 	font-size:1.1em;
 	color:rgba(0,0,0,.7);
+	display:block;
+	padding:0;
 }
 
 /*****************************************************************************/
