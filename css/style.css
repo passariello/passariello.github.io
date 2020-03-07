@@ -198,12 +198,15 @@ SOFTWARE.
 	text-shadow:0 -1px 0 rgba(0,0,0,.8);
 }
 
+.page article h2:first-of-type{
+	margin-top:20px;
+}
+
 .page article h2,
 .page article h3{
 	height:auto;
 	line-height:1em;
 	font-size:2.5em;
-	margin:15px 0;
 	font-weight:900;
 	letter-spacing:-.02em;
 	text-shadow: 0 -1px 1.05px #555, 0 2.01px 0 #fff;
@@ -215,16 +218,29 @@ SOFTWARE.
 	height:auto;
 	line-height:1em;
 	font-size:1.3em;
-	margin:-15px 0 15px 0;
+	margin:0 0 15px 0;
 	color:rgba(0,0,0,.4);
 	display:block;
 }
 
-.page article div ul li{
-	position:relative;
+/*****************************************************************************/
+
+article.columns div ul{
+	padding:10px;
+	list-style:none;
+	overflow:hidden;
 }
 
-.page article div ul li:before{
+article.columns div ul li{
+	padding:10px;
+	font-size:1em;
+	color:rgba(0,0,0,.5);
+	line-height:1.2em;
+	display:table;
+	position:relative; 
+}
+
+article.columns div ul li:before{
 	content:"";
 	position:absolute;
 	background-color: #f60;
@@ -235,35 +251,17 @@ SOFTWARE.
 	height:6px
 }
 
-.page p{
-	padding:0 0 20px 30px;
-	color:rgba(0,0,0,.6)
-}
-
-/*****************************************************************************/
-
-article.columns div:not(:first-child){
-	/*margin-top:20px;*/
-}
-
-article.columns div ul{
-	padding:10px 20px;
-}
-
-article.columns div ul li{
-	padding:10px;
-	font-size:1em;
-	color:rgba(0,0,0,.5);
-	line-height:1.2em;
-	display:table;
-}
-
 article.columns div ul li span{
 	font-weight:900;
 	font-size:1.1em;
 	color:rgba(0,0,0,.7);
 	display:block;
 	padding:0;
+}
+
+article.columns p{
+	padding:0 0 20px 30px;
+	color:rgba(0,0,0,.6);
 }
 
 /*****************************************************************************/

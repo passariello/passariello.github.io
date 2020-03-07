@@ -23,169 +23,168 @@ SOFTWARE.
 */
 
 @media only screen and (max-width: 959px) {
-  /******************************************/
  
-article.contact figure,
-article.contact figure img{
-	display:none;
-	width:0 !important;
-}
+	body,
+	.container {
+		position:absolute;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		overflow:hidden;
+		border:0;
+		border-radius:0;
+	}
+	 
+	.header img.avatar{
+		width:80px;
+		height:80px;
+		margin-left:-20px
+	}
 
-body,
-.container {
-	position:absolute;
-	left:0;
-	right:0;
-	top:0;
-	bottom:0;
-	overflow:hidden;
-	border:0;
-	border-radius:0;
-}
- 
-.header img.avatar{
-	width:80px;
-	height:80px;
-	margin-left:-20px
-}
+	.shownav {
+		position:absolute;
+		width:40px;
+		top:95px;
+		right:30px;
+		display:block;
+		z-index:10;
+		filter:invert(1);
+	}
 
-.shownav {
-	position:absolute;
-	width:40px;
-	top:95px;
-	right:30px;
-	display:block;
-	z-index:10;
-	filter:invert(1);
-}
+	.header h1,
+	.header h2{
+		left:110px;
+	}
 
-.header h1,
-.header h2{
-	left:110px;
-}
+	.title{
+		left:0;
+	}
 
-.title{
-	left:0;
-}
+	.page{
+		position:absolute;
+		top:150px;
+		bottom:75px;
+		left:0;
+		right:0;
+		overflow:scroll;
+		padding:0;
+		min-height:0;
+	}
 
-.page{
-	position:absolute;
-	top:150px;
-	bottom:75px;
-	left:0;
-	right:0;
-	overflow:scroll;
-	padding:0;
-	min-height:0;
-}
+	.nav {
+		top:150px;
+		bottom:75px;
+		width:100%;
+		position:absolute;
+		display:none;
+		padding:10px;
+	}
 
-.nav {
-	top:150px;
-	bottom:75px;
-	width:100%;
-	position:absolute;
-	display:none;
-	padding:10px;
-}
+	#background{
+		display:none;
+	}
 
-#background{
-	display:none;
-}
+	#shownavinput{
+		z-index:10;
+		position:absolute;
+	}
 
-#shownavinput{
-	z-index:10;
-	position:absolute;
-}
+	#shownavinput{
+		display: none;
+	}
 
-#shownavinput{
-    display: none;
-}
+	label[for="shownavinput"]:before {
+		background: url('/images/bars.svg')no-repeat;
+		content: "";
+		height: 75px;
+		width: 75px;
+		position: absolute;
+		width:40px;
+		top:95px;
+		right:30px;
+		display:block;
+		z-index:10;
+		filter:invert(1);
+	}
 
-label[for="shownavinput"]:before {
-	background: url('/images/bars.svg')no-repeat;
-	content: "";
-	height: 75px;
-	width: 75px;
-	position: absolute;
-	width:40px;
-	top:95px;
-	right:30px;
-	display:block;
-	z-index:10;
-	filter:invert(1);
-}
+	#shownavinput:checked ~ .nav {
+		display:block;
+	}
 
-#shownavinput:checked ~ .nav {
-	display:block;
-}
+	.footer {
+		padding: 18px;
+	}
 
-.footer {
-    padding: 18px;
-}
-
-.footer p:nth-child(2) {
-    float: left;
-	clear:both;
-}
+	.footer p:nth-child(2) {
+		float: left;
+		clear:both;
+	}
     
-  /******************************************/
+
 }
 
+@media only screen and (max-width: 600px) {
+
+	article.contact figure,
+	article.contact figure img{
+		display:none;
+		width:0 !important;
+	}
+
+}
 
 @media only screen and (max-width: 500px) {
-  /******************************************/
 
-article.about div:not(:first-child){
-	margin-top: 10px;
-}
+	article.about div:not(:first-child){
+		margin-top: 10px;
+	}
 
-.header h2{
-	font-size:1em
-}
+	.header h2{
+		font-size:1em
+	}
 
-.page{
-	font-size:1.2em;
-}
+	.page{
+		font-size:1.2em;
+	}
 
-.page,
-.nav{
-	bottom:55px;
-}
+	.page,
+	.nav{
+		bottom:55px;
+	}
 
-.page article{
-	padding:20px;
-}
+	.page article{
+		padding:20px;
+	}
 
-.page article h2, 
-.page article h3 {
-	font-size:2.2em
-}
+	.page article h2, 
+	.page article h3 {
+		font-size:2.2em
+	}
 
-.page article p {
-	padding:0 20px
-}
+	.page article p {
+		padding:0 20px
+	}
 
-article.about div:not(:first-child) {
-	margin-top:0;
-}
+	article.about div:not(:first-child) {
+		margin-top:0;
+	}
 
-.footer {
-    padding: 9px;
-    height: 60px;
-    border-width: 0 0 0 130px;
-    font-size: 0.7em;
-}
+	.footer {
+		padding: 9px;
+		height: 60px;
+		border-width: 0 0 0 130px;
+		font-size: 0.7em;
+	}
 
-.footer img {
-    left: -117px;
-    width: 105px;
-    height: auto;
-} 
-   
-.footer span {
-    bottom: 52.5px;
-}
+	.footer img {
+		left: -117px;
+		width: 105px;
+		height: auto;
+	} 
+	   
+	.footer span {
+		bottom: 52.5px;
+	}
   
-    
-  /******************************************/
 }
