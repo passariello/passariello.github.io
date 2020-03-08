@@ -51,9 +51,11 @@ SOFTWARE.
 */
 
 /******************************************************************************/
+	var d = new Date();
+	var seconds = Math.round(d.getTime() / 1000);
 	
 	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
-		
+	
 /******************************************************************************/
 
 	let iframeSize = function(){
@@ -72,8 +74,6 @@ SOFTWARE.
 /******************************************************************************/
 
 	let js = function( name ){
-		var d = new Date();
-		var seconds = Math.round(d.getTime() / 1000);
 		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		g.type='text/javascript'; g.async=true; g.defer=true; g.src = name + '?t=' + seconds; 
 		s.parentNode.insertBefore(g,s);
@@ -82,8 +82,6 @@ SOFTWARE.
 /******************************************************************************/
 
 	let css = function( name , media , id ){
-		var d = new Date();
-		var seconds = Math.round(d.getTime() / 1000);
 		var d=document, g=d.createElement('link'), s=d.getElementsByTagName('link')[0];
 		g.rel='stylesheet'; g.type='text/css'; g.id=id; g.media=media; g.href = name + '?t=' + seconds; 
 		s.parentNode.insertBefore(g,s);
@@ -116,7 +114,7 @@ SOFTWARE.
 
 	};
 
-	this.addEventListener('mousedown',function(e){DisableSelect();}, false);
+	this.addEventListener('mousedown',function(e){ DisableSelect(); }, false);
 
 /******************************************************************************/
 
@@ -158,14 +156,13 @@ SOFTWARE.
 		$( '.container' ).fadeIn( 500 );
 		
 		// IMAGE AS HOMEPAGE
-		$('.avatar').click(function(){
+		$('.avatar').mouseup(function(){
 			window.location.hash = "/home/";
 		});
 		
 		// GLOBAL SETUP
 		//**********************************
-		let currentTime = new Date();
-		let time = currentTime.getTime();
+		let time = d.getTime();
 
 		// EVENT SETUP
 		//**********************************
@@ -193,14 +190,14 @@ SOFTWARE.
 		//**********************************	
 		let AllAnchorToOnClick = function( item ){
 		
-			$( item ).each( function( index ) {
+			$( item ).each( function() {
 				
 				var elem = $( this );
 				var href = elem.attr( 'href' );
 				
 				if( href != undefined){
 					
-					elem.unbind().click( function(){ 
+					elem.unbind().mouseup( function(){ 
 						window.location.hash = "/" + href;				
 					});
 					
@@ -210,21 +207,25 @@ SOFTWARE.
 						
 				}
 			}).removeClass( 'selected' );
+
+			delete item;
+			delete href;
+			delete elem;
 			
 			return false;
-
+			
 		};	
 
 		// ALL ANCHOR TO ONCLICK
 		//**********************************		
 		let UrlByOnClick = function(){	
 
-			$('<div class="loader"><i></i></div>').appendTo('html');
+			$('<div class="loader"><i></i></div>').appendTo( 'body' );
 
+			var page = $('.page');
 			var d = new Date();
 			var seconds = Math.round(d.getTime() / 1000);
 			var result = window.location.hash.substr(1);
-			//console.log( result.replace(/\//g, '') );
 			
 			if (result.indexOf('?') > -1) window.location.hash = "/home/";	
 			if (result.indexOf('#') > -1) window.location.hash = "/home/";	
@@ -234,14 +235,14 @@ SOFTWARE.
 			result = result.replace("/" , "");			
 			result = result.replace("!" , "");	
 			
-			var parts = result.split('/');
+			var query = result.split('/');
 			
 			//css( "/pages/" + result +"/style.css",'all','' );
 			
 				var current_height = $('.container').outerHeight();
 				$('.container').css("min-height", current_height);
 			
-				$('.page').fadeOut( 500 , function(){
+				page.fadeOut( 500 , function(){
 					
 					$.ajax({
 						url: noCache( "/pages/" + result +"/start.html" ),
@@ -249,37 +250,40 @@ SOFTWARE.
 						
 						$('.container').css("min-height", 0);
 						
-
-						$( '.page' )
+						page
 						.hide()
 						.html( data )
-						.fadeIn( 500 , function(){					 
-							$( '.loader' ).fadeOut( 500 );							
-						});
+						.fadeIn( 500 , function(){ $( '.loader' ).fadeOut( 500 ); });
 
-						$('body').fadeIn( 500 , function(){						
-							$( '.loader' ).fadeOut( 500 );
+						iframeSize();
+						
+						$('body').fadeIn( 500 , function(){			
+							$( '.loader' ).fadeOut( 500 );														
 						});
 						
-						iframeSize();
-
-						$( 'html, body, .page' ).animate({ scrollTop: "0" }, 500);							
+						$( 'html, body, .page' ).animate({ scrollTop: "0" }, 500);												
 						
 						$( '#shownavinput' ).prop('checked', false);
-												
-						$( '.title h2' ).text( parts[0] );
-						$( 'nav .' + parts[0] ).addClass( 'selected' );
+
+						$( '.title h2' ).text( query[0] );
+						$( 'nav .' + query[0] ).addClass( 'selected' );
 						
-						document.title = "Dario Passariello | " + parts[0].charAt(0).toUpperCase() + result.slice(1).replace(/\//g,"");
+						document.title = "Dario Passariello | " + query[0].charAt(0).toUpperCase() + result.slice(1).replace(/\//g,"");
 						$('body').css({"display":"block"}).fadeTo(0,1);
 						
-						delete document;
+						
 						
 					}).fail(function(){
 						error( result, 404 );						
 					});
 								
 				});
+				
+			delete page;
+			delete query;
+			delete result;
+			delete current_height;
+			delete document;
 			
 			//SendToAnalytics(); 
 			//MOTOMO
@@ -290,10 +294,10 @@ SOFTWARE.
 		
 		let error = function( page, error ){
 
-		var $page;
+		var uri;
 			
 			switch ( error ) {	
-				case 404: $page = 404; break;
+				case 404: uri = 404; break;
 				default: null;
 			}
 			
@@ -301,13 +305,17 @@ SOFTWARE.
 			document.title = "Dario Passariello - Error " + error + ", page " + page + " not found on server";
 			$( '.title h2' ).text( error );
 			
-				$.ajax({ url: noCache( "/pages/errors/" + $page + ".html" )}).done(function( data ) {				
+				$.ajax({ url: noCache( "/pages/errors/" + uri + ".html" )}).done(function( data ) {				
 					$( '.page' ).html( data ).fadeIn( 200 );
 					$('body').fadeIn( 500 , function(){						
 						$( '.loader' ).fadeOut( 500 );
 					});
 				});
-
+				
+			delete page;
+			delete error;
+			delete uri;
+			
 		};
 		
 		// CHANGE HASH
@@ -315,15 +323,71 @@ SOFTWARE.
 		$( window ).bind( 'hashchange', function(e) {
 			AllAnchorToOnClick( 'nav li a' );
 			UrlByOnClick();
-		}).on( 'resize', function(){ iframeSize(); });;
+		}).on( 'resize', function(){ 
+			iframeSize(); 
+		});;
 		
 		// FIRST TRIGGER
 		//**********************************	
-		$( document ).trigger('hashchange');
+		$( document ).trigger( 'hashchange' );
 		
 		iframeSize();
 		
 	};
+		
+	/**************************************************************************/
+	/**************************************************************************/
+	/**************************************************************************/
+	/**************************************************************************/
+	/**************************************************************************/
+	
+	// WHEEL
+	/**************************************************************************/
+	
+	document.addEventListener('wheel', function( evt ) {
+	  //console.log( 'nothing for now' );
+	}, {
+	  capture: true,
+	  passive: true
+	});
+
+	// WINDOW BEFORE UNLOAD
+	/**************************************************************************/
+	
+	window.addEventListener('beforeunload', function (e){
+		
+		e.preventDefault();
+		e.returnValue = '';	
+		
+	});
+
+	// WINDOW OFF SCREEN BUFFER
+	/**************************************************************************/
+	
+	window.offScreenBuffering = true;
+
+	// WINDOW ANIMATION
+	/**************************************************************************/
+	
+	window = (function(){
+		
+		return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function( callback ){ 
+			window.setTimeout( callback, 1000 / 25 ); 
+		};
+		
+	})();
+	
+	/**************************************************************************/
+	
+	window.addEventListener( "load" , function(){ 
+		Exec(); 
+		delete Exec; 
+	});
 		
 	/**************************************************************************/
 	
@@ -331,8 +395,6 @@ SOFTWARE.
 	css( 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );	 
 	css( 'https://fonts.googleapis.com/css?family=Lato&display=swap' , 'all' , '' );
 	css( 'https://fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
-		
 	
-	try{ Exec(); }catch(e){ window.addEventListener("load", function(){ Exec(); } ,false); };
 
 	
