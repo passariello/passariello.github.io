@@ -193,14 +193,12 @@ SOFTWARE.
 		//**********************************	
 		let AllAnchorToOnClick = function( item ){
 		
-			$( item ).each( function(index) {
+			$( item ).each( function( index ) {
 				
 				var elem = $( this );
 				var href = elem.attr( 'href' );
-				console.log( elem );
-			
+				
 				if( href != undefined){
-					console.log( elem );
 					
 					elem.unbind().click( function(){ 
 						window.location.hash = "/" + href;				
