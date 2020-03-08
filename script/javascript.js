@@ -127,7 +127,8 @@ SOFTWARE.
 			'scrollbar-width': 'thin',
 			'scrollbar-color': '#444 transparent',
 			'scroll-behavior': 'smooth'
-		});		
+		});	
+		
 	/*		
 		$( '*::-webkit-scrollbar' ).css({	
 			'width':'4px',
@@ -156,7 +157,7 @@ SOFTWARE.
 		$( '.container' ).fadeIn( 500 );
 		
 		// IMAGE AS HOMEPAGE
-		$('.avatar').mouseup(function(){
+		$('.avatar').unbind().mouseup(function(){
 			window.location.hash = "/home/";
 		});
 		
@@ -274,7 +275,9 @@ SOFTWARE.
 						
 						
 					}).fail(function(){
-						error( result, 404 );						
+						
+						error( result, 404 );	
+						
 					});
 								
 				});
