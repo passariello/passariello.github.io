@@ -191,13 +191,16 @@ SOFTWARE.
 
 		// ALL ANCHOR TO ONCLICK
 		//**********************************	
-		let AllAnchorToOnClick = function(){
+		let AllAnchorToOnClick = function( item ){
 		
-			$('nav li a').each( function(index) {
+			$( item ).each( function(index) {
+				
 				var elem = $( this );
 				var href = elem.attr( 'href' );
+				console.log( elem );
 			
-				if( elem.attr( 'href' ) != undefined){
+				if( href != undefined){
+					console.log( elem );
 					
 					elem.unbind().click( function(){ 
 						window.location.hash = "/" + href;				
@@ -205,7 +208,7 @@ SOFTWARE.
 					
 					href = href.replace("/#/" , "");
 					elem.addClass( href.replace(/\//g, '') );
-					//elem.removeAttr( 'href' );
+					elem.removeAttr( 'href' );
 						
 				}
 			}).removeClass( 'selected' );
@@ -277,7 +280,7 @@ SOFTWARE.
 					}).fail(function(){
 						error( result, 404 );						
 					});
-					
+								
 				});
 			
 			//SendToAnalytics(); 
@@ -312,7 +315,7 @@ SOFTWARE.
 		// CHANGE HASH
 		//**********************************	
 		$( window ).bind( 'hashchange', function(e) {
-			AllAnchorToOnClick();
+			AllAnchorToOnClick( 'nav li a' );
 			UrlByOnClick();
 		}).on( 'resize', function(){ iframeSize(); });;
 		
