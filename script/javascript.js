@@ -21,7 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-/*
 	var _paq = window._paq || [];
 	(function(){
 		var u="//www.biglogic.ca/stat/";
@@ -48,8 +47,6 @@ SOFTWARE.
 		_paq.push( ['trackPageView'] );
 	};
 		
-*/
-
 /******************************************************************************/
 	var d = new Date();
 	var seconds = Math.round(d.getTime() / 1000);
@@ -110,18 +107,15 @@ SOFTWARE.
 			
 		});
 		
-		return 
+		return false;
 
 	};
 
 	this.addEventListener('mousedown',function(e){ DisableSelect(); }, false);
-
-/******************************************************************************/
-
-	var Exec = function(){
-		
-		// SCROLLBAR
-		//**********************************
+	
+/******************************************************************************/	
+	
+	let CustomScroll = function(){
 	
 		$( '*' ).css({	
 			'scrollbar-width': 'thin',
@@ -129,7 +123,6 @@ SOFTWARE.
 			'scroll-behavior': 'smooth'
 		});	
 		
-	/*		
 		$( '*::-webkit-scrollbar' ).css({	
 			'width':'4px',
 			'height':'4px',
@@ -144,8 +137,20 @@ SOFTWARE.
 			'background': 'transparent',
 			'margin':'3px 3px'
 		});
-	*/	
 	
+	};
+
+/******************************************************************************/
+
+	 js( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
+	css( '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );	 
+	css( '//fonts.googleapis.com/css?family=Lato&display=swap' , 'all' , '' );
+	css( '//fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
+	
+/******************************************************************************/	
+
+	var Exec = function(){
+		
 		// DECORATION
 		//**********************************
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
@@ -288,7 +293,7 @@ SOFTWARE.
 			delete current_height;
 			delete document;
 			
-			//SendToAnalytics(); 
+			SendToAnalytics(); 
 			//MOTOMO
 
 		};
@@ -328,17 +333,17 @@ SOFTWARE.
 			UrlByOnClick();
 		}).on( 'resize', function(){ 
 			iframeSize(); 
-		});;
+		});
 		
 		// FIRST TRIGGER
 		//**********************************	
 		$( document ).trigger( 'hashchange' );
 		
 		iframeSize();
+		CustomScroll();
 		
 	};
 		
-	/**************************************************************************/
 	/**************************************************************************/
 	/**************************************************************************/
 	/**************************************************************************/
@@ -389,15 +394,10 @@ SOFTWARE.
 	
 	window.addEventListener( "load" , function(){ 
 		Exec(); 
-		delete Exec; 
 	});
 		
 	/**************************************************************************/
 	
-	 js( 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' );
-	css( 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' , 'all' , '' );	 
-	css( 'https://fonts.googleapis.com/css?family=Lato&display=swap' , 'all' , '' );
-	css( 'https://fonts.googleapis.com/css?family=Poppins&display=swap' , 'all' , '' );
 	
 
 	
