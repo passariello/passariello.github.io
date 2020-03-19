@@ -21,6 +21,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+
+/******************************************************************************/
+	var d = new Date();
+	var seconds = Math.round(d.getTime() / 1000);
+	
+	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
+	
+/******************************************************************************/
+//MOTOMO
+
+/*	
 	var _paq = window._paq || [];
 	(function(){
 		var u="//www.biglogic.ca/stat/";
@@ -38,21 +49,15 @@ SOFTWARE.
 		s.parentNode.insertBefore(g,s);
 	})();
 	
-//********************************************************************************************
 
-	//MOTOMO
 
 	let SendToAnalytics = function(){
 		_paq.push( ['setCustomUrl', "/#" + window.location.hash.substr(1)]);
 		_paq.push( ['trackPageView'] );
 	};
+*/
 		
-/******************************************************************************/
-	var d = new Date();
-	var seconds = Math.round(d.getTime() / 1000);
-	
-	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
-	
+
 /******************************************************************************/
 
 	let iframeSize = function(){
@@ -152,13 +157,13 @@ SOFTWARE.
 	var Exec = function(){
 		
 		// DECORATION
-		//**********************************
+		/******************************************************************************/
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'10%','right':'5vw','width':'200px','height':'200px','z-index':'1'});	
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'20%','right':'10vw','width':'250px','height':'250px','z-index':'1'});
 
 		// SHOW PAGE
-		//**********************************	
+		/******************************************************************************/	
 		$( '.container' ).fadeIn( 500 );
 		
 		// IMAGE AS HOMEPAGE
@@ -167,33 +172,33 @@ SOFTWARE.
 		});
 		
 		// GLOBAL SETUP
-		//**********************************
+		/******************************************************************************/
 		let time = d.getTime();
 
 		// EVENT SETUP
-		//**********************************
+		/******************************************************************************/
 		if (!e) var e = window.event;
 
 		// RANDOM TIME
-		//**********************************
+		/******************************************************************************/
 		let tmr = function(){
 			return Math.round( time / 1000);
 		};
 		
 		// RANDOM NUMBER
-		//**********************************
+		/******************************************************************************/
 		let rnd = function(){
 			return Math.random()*123456789;
 		};
 
 		// NOCACHE
-		//**********************************
+		/******************************************************************************/
 		let noCache = function( uri ){
 			return uri.concat(/\?/.test( uri )?'&':'?','t=', tmr() ,'.', rnd() );
 		};
 
 		// ALL ANCHOR TO ONCLICK
-		//**********************************	
+		/******************************************************************************/
 		let AllAnchorToOnClick = function( item ){
 		
 			$( item ).each( function() {
@@ -223,7 +228,7 @@ SOFTWARE.
 		};	
 
 		// ALL ANCHOR TO ONCLICK
-		//**********************************		
+		/******************************************************************************/		
 		let UrlByOnClick = function(){	
 
 			$('<div class="loader"><i></i></div>').appendTo( 'body' );
@@ -243,7 +248,7 @@ SOFTWARE.
 			
 			var query = result.split('/');
 			
-			//css( "/pages/" + result +"/style.css",'all','' );
+			/*css( "/pages/" + result +"/style.css",'all','' );*/
 			
 				var current_height = $('.container').outerHeight();
 				$('.container').css("min-height", current_height);
@@ -294,11 +299,10 @@ SOFTWARE.
 			delete document;
 			
 			SendToAnalytics(); 
-			//MOTOMO
 
 		};
 		
-		//**********************************
+		/******************************************************************************/
 		
 		let error = function( page, error ){
 
@@ -327,7 +331,8 @@ SOFTWARE.
 		};
 		
 		// CHANGE HASH
-		//**********************************	
+		/******************************************************************************/
+		
 		$( window ).bind( 'hashchange', function(e) {
 			AllAnchorToOnClick( 'nav li a' );
 			UrlByOnClick();
@@ -336,7 +341,8 @@ SOFTWARE.
 		});
 		
 		// FIRST TRIGGER
-		//**********************************	
+		/******************************************************************************/
+		
 		$( document ).trigger( 'hashchange' );
 		
 		iframeSize();
