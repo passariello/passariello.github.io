@@ -298,7 +298,7 @@ SOFTWARE.
 			delete current_height;
 			delete document;
 			
-			SendToAnalytics(); 
+			if( typeof SendToAnalytics === "function" ) SendToAnalytics(); 
 
 		};
 		
