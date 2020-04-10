@@ -1,3 +1,7 @@
+@media all and (display-mode: fullscreen) {
+    /* Here goes the CSS rules that will only apply if app is running standalone */
+}
+
 /*
 CREATED BY DARIO PASSARIELLO 
 copyright (c) 2020
