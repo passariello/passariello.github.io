@@ -25,6 +25,7 @@ SOFTWARE.
 /******************************************************************************/
 	var d = new Date();
 	var seconds = Math.round(d.getTime() / 1000);
+    var SendToAnalytics;
 	
 	document.getElementsByTagName("HTML")[0].style.background = "url(/images/blank.gif) no-repeat center center";
 	
