@@ -60,19 +60,19 @@ SOFTWARE.
 
 /******************************************************************************/
 
-    function toggleFullScreen() {
-    var doc = window.document;
-    var docEl = doc.documentElement;
+    let toggleFullScreen = function() {
+        var doc = window.document;
+        var docEl = doc.documentElement;
 
-    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+        var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
 
-        if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+            if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
             requestFullScreen.call(docEl);
         } else {
             cancelFullScreen.call(doc);
         }
-    }
+    };
 
 /******************************************************************************/
 
@@ -222,7 +222,7 @@ SOFTWARE.
 				var elem = $( this );
 				var href = elem.attr( 'href' );
 				
-				if( href != undefined){
+				if( href !== undefined){
 					
 					elem.unbind().mouseup( function(){ 
 						window.location.hash = "/" + href;				
@@ -236,9 +236,6 @@ SOFTWARE.
 			}).removeClass( 'selected' );
 
 			delete item;
-			delete href;
-			delete elem;
-			
 			return false;
 			
 		};	
@@ -272,7 +269,7 @@ SOFTWARE.
 				page.fadeOut( 500 , function(){
 					
 					$.ajax({
-						url: noCache( "/pages/" + result +"/start.html" ),
+						url: noCache( "/pages/" + result +"/start.html" )
 					}).done(function( data ) {
 						
 						$('.container').css("min-height", 0);
