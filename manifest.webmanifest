@@ -1,0 +1,22 @@
+{
+  "short_name": "Dario Passariello",
+  "name": "Dario Passariello official website",
+  "description": "Dario Passariello official website",
+  "icons": [
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "display":"fullscreen",
+  "start_url": "/index.html",
+  "background_color": "#3367D6",
+  "scope": "/",
+  "theme_color": "#3367D6"
+}
