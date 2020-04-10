@@ -77,18 +77,16 @@ SOFTWARE.
 
 /******************************************************************************/
 
+/*
 let deferredPrompt;
 var btn;
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
-  // Stash the event so it can be triggered later on the button event.
   deferredPrompt = e;
-// Update UI by showing a button to notify the user they can add to home screen
   btn.style.display = 'block';
 });
- 
+
 //button click event to show the promt
 btn.addEventListener('click', (e) => {
   // hide our user interface that shows our button
@@ -106,7 +104,7 @@ btn.addEventListener('click', (e) => {
       deferredPrompt = null;
     });
 });
-
+*/
 /******************************************************************************/
 
 	let iframeSize = function(){
