@@ -203,16 +203,14 @@ SOFTWARE.
             'height':'auto'
         });
         
-/******************************************************************************/
+        /******************************************************************************/
 
-        if ("serviceWorker" in navigator) {
-            if (navigator.serviceWorker.controller) {
-                console.log("active service worker found, no need to register");
-          } else {
-                navigator.serviceWorker.register("./sw.js", {  scope: "./"  }).then(function (reg) {
-                    console.log("Service worker has been registered for scope: " + reg.scope);
-              });
-          }
+        if ('serviceWorker' in navigator) { 
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('Registration successful, scope is:', registration.scope); 
+            }) .catch(function(error) { 
+                console.log('Service worker registration failed, error:', error); 
+            }); 
         }
 
 		// DECORATION
