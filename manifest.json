@@ -2,11 +2,16 @@
     "short_name": "Dario Passariello",
     "name": "Dario Passariello official website",
     "description": "Dario Passariello official website",
+    
     "theme_color": "#000000",
     "background_color": "#ffffff",
+    
     "lang": "en-US",
+    "default_locale": "en",
+    
     "start_url": "./?utm_source=homescreen",
     "scope": "./",
+    
     "display": "fullscreen",
     "orientation": "portrait",
     "icons": [
@@ -20,5 +25,11 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "chrome_ui_overrides": {
+        "bookmarks_ui": {
+            "remove_bookmark_shortcut": true,
+            "remove_button": true
+        }
+    }
 }
