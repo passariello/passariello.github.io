@@ -218,12 +218,13 @@ btn.addEventListener('click', (e) => {
             console.log('display-mode is standalone');
         }
 
+        /*
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('service-worker.js')
             .then(() => console.log('service worker installed'))
             .catch(err => console.error('Error', err));
         }
-		
+		*/
 		// DECORATION
 		/******************************************************************************/
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
