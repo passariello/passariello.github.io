@@ -205,14 +205,6 @@ SOFTWARE.
         
         /******************************************************************************/
 
-        if ('serviceWorker' in navigator) { 
-            navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                console.log('Registration successful, scope is:', registration.scope); 
-            }) .catch(function(error) { 
-                console.log('Service worker registration failed, error:', error); 
-            }); 
-        }
-
 		// DECORATION
 		/******************************************************************************/
 		$( '<div class="flare"></div>' ).appendTo('#background').css({'top':'-20%','left':'5vw','width':'500px','height':'500px','z-index':'1'});
@@ -456,6 +448,16 @@ SOFTWARE.
 		Exec(); 
 	});
 		
+	/**************************************************************************/
+    
+    if ('serviceWorker' in navigator) { 
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        console.log('Registration successful, scope is:', registration.scope); 
+    }) .catch(function(error) { 
+        console.log('Service worker registration failed, error:', error); 
+    }); 
+    }
+        
 	/**************************************************************************/
 	
 	
