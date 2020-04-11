@@ -307,7 +307,7 @@ btn.addEventListener('click', (e) => {
 			if (result.indexOf('?') > -1) window.location.hash = "/home/";	
 			if (result.indexOf('#') > -1) window.location.hash = "/home/";	
 			
-			if( !result ) result = 'home/';
+			if( !result ) result = 'home';
 			
 			result = result.replace("/" , "");			
 			result = result.replace("!" , "");	
@@ -322,7 +322,7 @@ btn.addEventListener('click', (e) => {
 				page.fadeOut( 500 , function(){
 					
 					$.ajax({
-						url: noCache( "/pages/" + result +"start.html" )
+						url: noCache( "/pages/" + result +"/start.html" )
 					}).done(function( data ) {
 						
 						$('.container').css("min-height", 0);
