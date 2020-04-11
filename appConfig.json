@@ -1,6 +1,5 @@
 {
   "general": {
-    "userAgentAdd": "gonative",
     "useWKWebView": true,
     "enableWindowOpen": true,
     "useCrosswalkWebView": false,
@@ -136,8 +135,6 @@
     "toolbarNavigation": null
   },
   "styling": {
-    "icon": "images/logo1_white_padded.png",
-    "iosHeaderImage": "images/logo1.png",
     "showActionBar": false,
     "showNavigationBar": false,
     "iosSidebarFont": "Default",
@@ -162,8 +159,7 @@
     "androidTabBarIndicatorColor": "#000000",
     "androidLaunchImages": {},
     "iosLaunchScreen": {
-      "backgroundColor": "#FFFFFF",
-      "backgroundImage": "https://s3.amazonaws.com/gonativeio/public/ios_launch_screen_background_default_FFFFFF_1_2x2.png"
+      "backgroundColor": "#FFFFFF"
     },
     "androidStatusBarBackgroundColor": "#909090"
   },
