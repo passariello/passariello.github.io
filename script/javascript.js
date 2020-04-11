@@ -228,7 +228,7 @@ btn.addEventListener('click', (e) => {
             // Register the service worker
             navigator.serviceWorker
               .register("/script/sw.js", {
-                scope: "./"
+                scope: "/"
               })
               .then(function (reg) {
                 console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
