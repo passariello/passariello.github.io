@@ -5,7 +5,7 @@
     "theme_color": "#000000",
     "background_color": "#ffffff",
     "lang": "en-US",
-    "start_url": "/?utm_source=homescreen",
+    "start_url": "./?utm_source=homescreen",
     "scope": "./",
     "display": "fullscreen",
     "orientation": "portrait",
