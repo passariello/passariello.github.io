@@ -307,7 +307,7 @@ btn.addEventListener('click', (e) => {
 			if (result.indexOf('?') > -1) window.location.hash = "/home/";	
 			if (result.indexOf('#') > -1) window.location.hash = "/home/";	
 			
-			if( !result ) result = 'home';
+			if( !result ) result = 'home/';
 			
 			result = result.replace("/" , "");			
 			result = result.replace("!" , "");	
