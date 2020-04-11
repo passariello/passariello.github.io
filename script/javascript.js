@@ -77,26 +77,6 @@ SOFTWARE.
 
 /******************************************************************************/
 
-window.addEventListener('appinstalled', (event) => {
- console.log('installed');
-});
-
-if (window.matchMedia('(display-mode: standalone)').matches) {
-     console.log('display-mode is standalone');
-}
-
-if (window.navigator.standalone === true) {
-    console.log('display-mode is standalone');
-}
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log('service worker installed'))
-    .catch(err => console.error('Error', err));
-}
-
-/******************************************************************************/
-
 let deferredPrompt;
 let btn = document.getElementById('prompt');
 
@@ -222,6 +202,27 @@ btn.addEventListener('click', (e) => {
             'width':'100%',
             'height':'auto'
         });
+        
+        
+        /******************************************************************************/
+
+        window.addEventListener('appinstalled', (event) => {
+            console.log('installed');
+        });
+
+        if (window.matchMedia('(display-mode: fullscreen)').matches) {
+             console.log('display-mode is standalone');
+        }
+
+        if (window.navigator.fullscreen === true) {
+            console.log('display-mode is standalone');
+        }
+
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(() => console.log('service worker installed'))
+            .catch(err => console.error('Error', err));
+        }
 		
 		// DECORATION
 		/******************************************************************************/
