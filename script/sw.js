@@ -10,23 +10,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-// This is the "Offline page" service worker
 
-const CACHE = "pwabuilder-page";
+const CACHE = "pwapage";
+const offlineFallbackPage = "index.html";
 
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "ToDo-replace-this-name.html";
-
-// Install stage sets up the offline page in the cache and opens a new cache
 self.addEventListener("install", function (event) {
-  console.log("[PWA Builder] Install Event processing");
+  console.log("Install Event processing");
 
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Cached offline page during install");
+      console.log("Cached offline page during install");
 
-      if (offlineFallbackPage === "ToDo-replace-this-name.html") {
-        return cache.add(new Response("TODO: Update the value of the offlineFallbackPage constant in the serviceworker."));
+      if (offlineFallbackPage === "index.html") {
+        return cache.add(new Response("TODO: serviceworker."));
       }
 
       return cache.add(offlineFallbackPage);
@@ -48,7 +44,7 @@ self.addEventListener("fetch", function (event) {
         return;
       }
 
-      console.error("[PWA Builder] Network request Failed. Serving offline page " + error);
+      console.error("Network request Failed. Serving offline page " + error);
       return caches.open(CACHE).then(function (cache) {
         return cache.match(offlineFallbackPage);
       });
@@ -62,13 +58,8 @@ self.addEventListener("refreshOffline", function () {
 
   return fetch(offlineFallbackPage).then(function (response) {
     return caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Offline page updated from refreshOffline event: " + response.url);
+      console.log("Offline page updated from refreshOffline event: " + response.url);
       return cache.put(offlinePageRequest, response);
     });
   });
 });
-
-
-
-
-

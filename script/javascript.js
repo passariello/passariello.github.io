@@ -203,35 +203,14 @@ btn.addEventListener('click', (e) => {
             'height':'auto'
         });
         
-        
-        /******************************************************************************/
+/******************************************************************************/
 
-        window.addEventListener('appinstalled', (event) => {
-            console.log('installed');
-        });
-
-        if (window.matchMedia('(display-mode: fullscreen)').matches) {
-             console.log('display-mode is standalone');
-        }
-
-        if (window.navigator.fullscreen === true) {
-            console.log('display-mode is standalone');
-        }
-
-		/******************************************************************************/
-
-        // Check compatibility for the browser we're running this in
         if ("serviceWorker" in navigator) {
-          if (navigator.serviceWorker.controller) {
-            console.log("[PWA Builder] active service worker found, no need to register");
+            if (navigator.serviceWorker.controller) {
+                console.log("active service worker found, no need to register");
           } else {
-            // Register the service worker
-            navigator.serviceWorker
-              .register("/script/sw.js", {
-                scope: "/script/"
-              })
-              .then(function (reg) {
-                console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+                navigator.serviceWorker.register("/script/sw.js", {  scope: "/script/"  }).then(function (reg) {
+                    console.log("Service worker has been registered for scope: " + reg.scope);
               });
           }
         }
