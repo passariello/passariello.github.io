@@ -2,6 +2,13 @@
     "short_name": "Dario Passariello",
     "name": "Dario Passariello official website",
     "description": "Dario Passariello official website",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "lang": "en-US",
+    "scope": "/",
+    "start_url": "/",
+    "display": "fullscreen",
+    "orientation": "portrait",
     "icons": [
         {
             "src": "/images/icons/android-chrome-192x192.png",
@@ -13,11 +20,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "lang": "en-US",
-    "start_url": "/index.html",
-    "display": "fullscreen",
-    "orientation": "portrait"
+    ]
 }

@@ -77,34 +77,49 @@ SOFTWARE.
 
 /******************************************************************************/
 
-/*
+window.addEventListener('appinstalled', (event) => {
+ console.log('installed');
+});
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+     console.log('display-mode is standalone');
+}
+
+if (window.navigator.standalone === true) {
+    console.log('display-mode is standalone');
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('service worker installed'))
+    .catch(err => console.error('Error', err));
+}
+
+/******************************************************************************/
+
 let deferredPrompt;
-var btn;
+let btn = document.getElementById('prompt');
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  btn.style.display = 'block';
+    e.preventDefault();
+    deferredPrompt = e;
+    btn.style.display = 'block';
 });
 
-//button click event to show the promt
 btn.addEventListener('click', (e) => {
-  // hide our user interface that shows our button
   btn.style.display = 'none';
-  // Show the prompt
   deferredPrompt.prompt();
-  // Wait for the user to respond to the prompt
   deferredPrompt.userChoice
     .then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the prompt');
-      } else {
-        console.log('User dismissed the prompt');
-      }
-      deferredPrompt = null;
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the prompt');
+        } else {
+            console.log('User dismissed the prompt');
+        }
+        deferredPrompt = null;
     });
 });
-*/
+
 /******************************************************************************/
 
 	let iframeSize = function(){
@@ -305,7 +320,7 @@ btn.addEventListener('click', (e) => {
 				page.fadeOut( 500 , function(){
 					
 					$.ajax({
-						url: noCache( "/pages/" + result +"/start.html" )
+						url: noCache( "/pages/" + result +"start.html" )
 					}).done(function( data ) {
 						
 						$('.container').css("min-height", 0);
