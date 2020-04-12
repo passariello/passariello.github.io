@@ -77,9 +77,9 @@ SOFTWARE.
 
 /******************************************************************************/
 
-    let deferredPrompt;
-    let btn = document.getElementById('prompt');
-
+    var btn = document.getElementById('prompt');
+    var deferredPrompt;
+    
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
