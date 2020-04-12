@@ -34,6 +34,7 @@ SOFTWARE.
 		overflow:hidden;
 		border:0;
 		border-radius:0;
+        overflow: hidden;
 	}
 	 
 	.header img.avatar{
