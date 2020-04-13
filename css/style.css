@@ -23,9 +23,9 @@ SOFTWARE.
 
 .container {
 	max-width: 960px;
-	min-width:359px;
+	min-width:330px;
 	height:100%;
-	min-height:480px;
+	min-height:280px;
 	position:relative;
 	margin:0 auto;
 	overflow:hidden;

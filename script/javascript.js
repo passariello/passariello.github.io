@@ -185,12 +185,13 @@ SOFTWARE.
 		
 		$( '*::-webkit-scrollbar-thumb' ).css({	
 			'background':'#444'
-		});
+		});        
 		
 		$( '*::-webkit-scrollbar-track' ).css({	
 			'background': 'transparent',
 			'margin':'3px 3px'
 		});
+        
 	
 	};
 
