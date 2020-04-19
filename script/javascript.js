@@ -211,6 +211,10 @@ SOFTWARE.
         });
         
         /******************************************************************************/
+		
+		$('head').append('<meta name="viewport" content=""width=device-width, initial-scale=.8, maximum-scale=.8, minimum-scale=.8, user-scalable=no, shrink-to-fit=no"">')
+		
+        /******************************************************************************/
 
         if ('serviceWorker' in navigator) { 
             navigator.serviceWorker.register('/sw.js').then(function(registration) {
