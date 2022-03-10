@@ -1,0 +1,227 @@
+@media all and (display-mode: fullscreen) {
+    /* Here goes the CSS rules that will only apply if app is running standalone */
+}
+
+/*
+CREATED BY DARIO PASSARIELLO 
+copyright (c) 2020
+
+
+The MIT License (MIT)
+Copyright (c) 2020 Dario Passariello
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+html{
+	width: 100%;
+	height: 100vh;
+	overflow-y:scroll;
+} 
+
+body{
+	padding:10px;
+	text-align: left;
+	text-overflow: ellipsis;
+	font-size:1.01em;
+	font-family: Lato, Helvetica, Arial, sans-serif;
+	color:#000;
+	cursor:default;
+        -webkit-overflow-scrolling: touch;
+}
+
+#background:before{
+	content: '';
+	background-image: 
+	linear-gradient(to bottom, rgba(110,130,160,.6), rgba(0,0,0,.8) ), 
+	linear-gradient(45deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) 22%, rgba(0,0,0,.05) 22%, rgba(0,0,0,.05) 29%, transparent 29%);
+	background-position:center center;
+	background-repeat:no-repeat;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index: -2; 
+}
+
+#background{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:1;
+	display:block;
+}
+
+/*
+#background::after {
+	content: '';
+	background-image:url( /images/dot.svg );
+	background-position:center center;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	opacity:.1;
+	z-index: -1; 
+}
+*/
+
+h1,h2,h3,h4,h5,h6{
+	line-height:.5em;
+	height:.5em;
+	font-size:1em;
+	font-weight:100;
+}
+
+a{
+	text-decoration: none;
+	color: #0085c7;
+}
+
+a:visited{
+	color: #c70074;
+}
+
+a:hover{
+	color: #F60;
+}
+
+hr{
+	display:block;
+	width:100%;
+	height:6px;
+	background-color:#cdcdcd;
+	margin:8px 0;
+	border-top:1px solid #555;
+	border-bottom:1px solid #eee;
+	border-radius:2px;
+	position:relative;
+}
+
+hr:after{
+	position:absolute;
+	content:'';
+	width:10px;
+	height:10px;
+	display:block;
+	top:-3.8px;
+	right:0;
+	background:gray;
+	border-radius:50%;
+}
+
+iframe{
+	display:none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: top;
+	outline:0;
+	outline-style:none;
+	box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]){
+	display: none;
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	vertical-align: middle;
+	border: 0;
+}
+
+ol, ul {
+	list-style: square;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
+	content: '';
+	content: none;
+}
+
+b, strong{
+	font-weight:900;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+
+

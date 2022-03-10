@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ca.biglogic.passariello.myapp",
+      "sha256_cert_fingerprints":
+        ["43:10:C4:0B:98:C7:97:5C:2F:20:B6:94:C7:90:14:13:03:22:37:8E:A7:36:3F:DA:42:36:1A:3E:AC:B4:BE:6F"]
+    }
+  }
+]
